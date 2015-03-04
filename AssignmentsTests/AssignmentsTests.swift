@@ -8,7 +8,6 @@
 
 import UIKit
 import XCTest
-
 class AssignmentsTests: XCTestCase {
     
     override func setUp() {
@@ -24,6 +23,7 @@ class AssignmentsTests: XCTestCase {
     func testExample() {
         // This is an example of a functional test case.
         XCTAssert(true, "Pass")
+        var 😱 : Assignment
     }
     
     func testPerformanceExample() {
@@ -32,5 +32,6 @@ class AssignmentsTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
     
 }
