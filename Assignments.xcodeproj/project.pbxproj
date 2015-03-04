@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		C879E8FF1AA77924002B61D1 /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Assignment.swift; path = ../Assignments/Assignment.swift; sourceTree = "<group>"; };
+		C879E8FF1AA77924002B61D1 /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 		DD81BA311A9E60F100F04B40 /* Assignments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD81BA351A9E60F300F04B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD81BA361A9E60F300F04B40 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +87,7 @@
 				DD81BA3C1A9E60F300F04B40 /* Main.storyboard */,
 				DD81BA3F1A9E60F300F04B40 /* Images.xcassets */,
 				DD81BA411A9E60F400F04B40 /* LaunchScreen.xib */,
+				C879E8FF1AA77924002B61D1 /* Assignment.swift */,
 				DD81BA341A9E60F200F04B40 /* Supporting Files */,
 			);
 			path = Assignments;
@@ -103,7 +104,6 @@
 		DD81BA4B1A9E60F800F04B40 /* AssignmentsTests */ = {
 			isa = PBXGroup;
 			children = (
-				C879E8FF1AA77924002B61D1 /* Assignment.swift */,
 				DD81BA4E1A9E60F800F04B40 /* AssignmentsTests.swift */,
 				DD81BA4C1A9E60F800F04B40 /* Supporting Files */,
 			);

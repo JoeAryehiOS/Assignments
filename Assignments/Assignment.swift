@@ -8,16 +8,24 @@
 
 import Foundation
 
-class Assignment{
+class Assignment {
     
-    var assignmentName: String
+    var assignmentName: String!
+    var timeSpent = 0.0
+    var timeToComplete = 0.0
+    var isCompleted = false
+    var dueDate:NSDate!
+    //var assignmentType: AssignmentType
+    //var forClass:Class
     
-    init(name:String){
-        
+    
+    
+    func checkCompletion() -> Bool{
+        if(timeToComplete<timeSpent || timeToComplete==timeSpent){
+            return true
+        }
+        return false
     }
-    
-    
-    
     
     
 }
