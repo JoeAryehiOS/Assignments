@@ -97,37 +97,12 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="U5O-ue-Isu" kind="relationship" relationship="viewControllers" id="lIx-lW-uDE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-<<<<<<< HEAD
-        <!--View Controller-->
-        <scene sceneID="1qg-AY-Klp">
-            <objects>
-                <viewController id="U5O-ue-Isu" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="D1x-iE-ZgW"/>
-                        <viewControllerLayoutGuide type="bottom" id="zBq-6o-WRl"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="T8h-ca-y7Q">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="FQb-7P-wUn">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                    </tabBarItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cmE-SR-28L" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="108" y="919"/>
-        </scene>
-=======
->>>>>>> parent of 7a4583a... Added Assignments class
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
