@@ -104,7 +104,6 @@
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
         </scene>
-<<<<<<< HEAD
         <!--Settings-->
         <scene sceneID="1qg-AY-Klp">
             <objects>
@@ -126,8 +125,6 @@
             </objects>
             <point key="canvasLocation" x="716" y="1055"/>
         </scene>
-=======
->>>>>>> parent of 7a4583a... Added Assignments class
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
