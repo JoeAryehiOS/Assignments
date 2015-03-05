@@ -218,10 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-<<<<<<< HEAD
 				C879E9001AA77924002B61D1 /* Assignment.swift in Sources */,
-=======
->>>>>>> parent of 7a4583a... Added Assignments class
 				DD81BA3B1A9E60F300F04B40 /* SecondViewController.swift in Sources */,
 				DD81BA371A9E60F300F04B40 /* AppDelegate.swift in Sources */,
 				DD81BA391A9E60F300F04B40 /* FirstViewController.swift in Sources */,
@@ -416,6 +413,7 @@
 				DD81BA541A9E60F800F04B40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD81BA551A9E60F800F04B40 /* Build configuration list for PBXNativeTarget "AssignmentsTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +422,7 @@
 				DD81BA571A9E60F800F04B40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
