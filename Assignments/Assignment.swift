@@ -12,11 +12,11 @@ class Assignment {
     
     var assignmentName: String!
     var timeSpent = 0.0
-    private var timeToComplete = 0.0
+    var timeToComplete = 0.0
     var isCompleted = false
     var dueDate:NSDate!
     //var assignmentType: AssignmentType
-    var forCourse:Course!
+    //var forCourse:Course
     
     
     
@@ -26,11 +26,6 @@ class Assignment {
         }
         return false
     }
-    
-    func setTimeToComplete(newTimeHours : Double, newTimeMinutes : Double){
-        timeToComplete = newTimeMinutes + (newTimeHours*60)
-    }
-    
     
     
 }
