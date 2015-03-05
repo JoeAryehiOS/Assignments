@@ -16,7 +16,7 @@ class Assignment {
     var isCompleted = false
     var dueDate:NSDate!
     //var assignmentType: AssignmentType
-    //var forClass:Class
+    //var forCourse:Course
     
     
     
