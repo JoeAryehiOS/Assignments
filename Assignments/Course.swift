@@ -12,7 +12,7 @@ import Foundation
 class Course{
     
     var courseName: String!
-    
+    var Assignments: [Assignment] = []
     //TODO MAKE THIS USEFUL
     
 }

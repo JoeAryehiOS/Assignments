@@ -11,15 +11,24 @@ import Foundation
 class Assignment {
     
     var assignmentName: String!
-    var timeSpent = 0.0
-    private var timeToComplete = 0.0
+    var timeSpent: Double = 0.0
+    var timeToComplete = 0.0
     var isCompleted = false
     var dueDate:NSDate!
     //var assignmentType: AssignmentType
     var forCourse:Course!
+    var description: String!
     
     
     
+    init(assignmentName name: String, dueDate due: NSDate, timeToComplete time: Double, details: String?){
+        assignmentName = name
+        timeToComplete = time
+        dueDate = due
+        if let a = description?{
+           self.description = details
+        }
+    }
     func checkCompletion() -> Bool{
         if(timeToComplete<timeSpent || timeToComplete==timeSpent){
             return true
