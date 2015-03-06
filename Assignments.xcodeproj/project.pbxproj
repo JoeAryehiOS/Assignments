@@ -14,6 +14,7 @@
 		DD81BA401A9E60F300F04B40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD81BA3F1A9E60F300F04B40 /* Images.xcassets */; };
 		DD81BA431A9E60F400F04B40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD81BA411A9E60F400F04B40 /* LaunchScreen.xib */; };
 		DD81BA4F1A9E60F800F04B40 /* AssignmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81BA4E1A9E60F800F04B40 /* AssignmentsTests.swift */; };
+		DD9AFAB51AA8CAC2005D738E /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD9AFAB41AA8CAC2005D738E /* Assignment.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		DD81BA481A9E60F800F04B40 /* AssignmentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssignmentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD81BA4D1A9E60F800F04B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD81BA4E1A9E60F800F04B40 /* AssignmentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentsTests.swift; sourceTree = "<group>"; };
+		DD9AFAB41AA8CAC2005D738E /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				DD81BA3F1A9E60F300F04B40 /* Images.xcassets */,
 				DD81BA411A9E60F400F04B40 /* LaunchScreen.xib */,
 				DD81BA341A9E60F200F04B40 /* Supporting Files */,
+				DD9AFAB41AA8CAC2005D738E /* Assignment.swift */,
 			);
 			path = Assignments;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD9AFAB51AA8CAC2005D738E /* Assignment.swift in Sources */,
 				DD81BA3B1A9E60F300F04B40 /* SecondViewController.swift in Sources */,
 				DD81BA371A9E60F300F04B40 /* AppDelegate.swift in Sources */,
 				DD81BA391A9E60F300F04B40 /* FirstViewController.swift in Sources */,
@@ -409,6 +413,7 @@
 				DD81BA541A9E60F800F04B40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD81BA551A9E60F800F04B40 /* Build configuration list for PBXNativeTarget "AssignmentsTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				DD81BA571A9E60F800F04B40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
