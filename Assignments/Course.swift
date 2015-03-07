@@ -12,10 +12,12 @@ import Foundation
 class Course{
     
     var courseName: String
+    var courseNumber: Int?
     var Assignments: [Assignment] = []
     //TODO MAKE THIS USEFUL
-    init(courseName name: String){
+    init(courseName name: String, courseNumber number: Int?){
         courseName = name
+        courseNumber = number
     }
     
 }

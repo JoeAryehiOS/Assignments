@@ -16,10 +16,11 @@ class CourseList{
         return Singleton.instance
     }
     var list: [Course] = Array()
-    func addCourse(name: String){
-        list.append(Course(courseName: name))
+    func addCourse(name: String, number: Int?){
+        list.append(Course(courseName: name, courseNumber: number))
         
     }
+    
     func deleteCoursewith(CourseName: String){
         for i in enumerate(list){
             if (i.element.courseName == CourseName){
@@ -29,8 +30,15 @@ class CourseList{
         
         
     }
-    func deleteCoursewith(Index: Int){
-        list.removeAtIndex(Index)
+    
+    func deleteCoursewith(CourseNumber: Int){
+        for i in enumerate(list){
+            if let a = i.element.courseNumber{
+                if(a == CourseNumber){
+                    list.removeAtIndex(i.index)
+                }
+            }
+        }
     }
     /*
     func save(){
