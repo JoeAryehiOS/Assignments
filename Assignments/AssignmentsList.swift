@@ -7,3 +7,15 @@
 //
 
 import Foundation
+class AssignmentsList{
+    class var List: AssignmentsList{
+    struct Singleton{
+        static let instance = AssignmentsList()
+        
+    }
+    return Singleton.instance
+}
+var Assignments: [Assignment] = Array()
+
+
+}
