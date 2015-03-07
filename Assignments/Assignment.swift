@@ -15,7 +15,6 @@ class Assignment {
     var timeToComplete = 0.0
     var isCompleted = false
     var dueDate:NSDate!
-    //var assignmentType: AssignmentType
     var forCourse:Course!
     var description: String!
     
