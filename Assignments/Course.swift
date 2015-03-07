@@ -11,8 +11,11 @@ import Foundation
 
 class Course{
     
-    var courseName: String!
+    var courseName: String
     var Assignments: [Assignment] = []
     //TODO MAKE THIS USEFUL
+    init(courseName name: String){
+        courseName = name
+    }
     
 }
