@@ -98,11 +98,47 @@
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="U5O-ue-Isu" kind="relationship" relationship="viewControllers" id="lIx-lW-uDE"/>
+                        <segue destination="qiV-XD-i8r" kind="relationship" relationship="viewControllers" id="INM-bn-6yT"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Tests-->
+        <scene sceneID="5jT-6J-NXp">
+            <objects>
+                <viewController id="qiV-XD-i8r" customClass="TestViewController" customModule="Assignments" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1i5-Rs-Mdf"/>
+                        <viewControllerLayoutGuide type="bottom" id="ckT-EZ-GvR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JzN-pg-5VS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwA-51-hsd">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXX-RJ-1Py">
+                                <rect key="frame" x="42" y="44" width="109" height="30"/>
+                                <state key="normal" title="TestAssignment">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="TestAssignment:" destination="qiV-XD-i8r" eventType="touchUpInside" id="afY-mc-gcf"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tests" id="aey-Wk-EQR"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8mi-Wg-A5z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="28" y="1168"/>
         </scene>
         <!--Settings-->
         <scene sceneID="1qg-AY-Klp">

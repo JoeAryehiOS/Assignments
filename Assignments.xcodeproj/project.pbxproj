@@ -17,6 +17,7 @@
 		DD81BA401A9E60F300F04B40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD81BA3F1A9E60F300F04B40 /* Images.xcassets */; };
 		DD81BA431A9E60F400F04B40 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD81BA411A9E60F400F04B40 /* LaunchScreen.xib */; };
 		DD81BA4F1A9E60F800F04B40 /* AssignmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81BA4E1A9E60F800F04B40 /* AssignmentsTests.swift */; };
+		DDC88AEE1AABC87D00DE36A1 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC88AED1AABC87D00DE36A1 /* TestViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		DD81BA481A9E60F800F04B40 /* AssignmentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssignmentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD81BA4D1A9E60F800F04B40 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DD81BA4E1A9E60F800F04B40 /* AssignmentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentsTests.swift; sourceTree = "<group>"; };
+		DDC88AED1AABC87D00DE36A1 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 				C8A7FD461AA8A9ED0046E9AD /* Course.swift */,
 				DD81BA341A9E60F200F04B40 /* Supporting Files */,
 				DD4D209B1AABAB8D005E722C /* CourseList.swift */,
+				DDC88AED1AABC87D00DE36A1 /* TestViewController.swift */,
 			);
 			path = Assignments;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDC88AEE1AABC87D00DE36A1 /* TestViewController.swift in Sources */,
 				C879E9001AA77924002B61D1 /* Assignment.swift in Sources */,
 				DD81BA3B1A9E60F300F04B40 /* SecondViewController.swift in Sources */,
 				C8A7FD471AA8A9EE0046E9AD /* Course.swift in Sources */,
