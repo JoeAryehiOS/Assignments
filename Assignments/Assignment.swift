@@ -16,7 +16,7 @@ class Assignment {
     var isCompleted = false
     var dueDate:NSDate!
     var forCourse:Course!
-    var description: String!
+    var description: String?
     
     
     
@@ -38,7 +38,12 @@ class Assignment {
     func setTimeToComplete(newTimeHours : Double, newTimeMinutes : Double){
         timeToComplete = newTimeMinutes + (newTimeHours*60)
     }
-    
-    
+    func getDescription() -> String{
+        if let a = description?{
+            return assignmentName + ":" + a}
+        else{
+            return assignmentName
+        }
+    }
     
 }

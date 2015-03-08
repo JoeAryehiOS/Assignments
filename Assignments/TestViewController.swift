@@ -10,6 +10,7 @@ import UIKit
 
 class TestViewController: UIViewController {
 
+    @IBOutlet weak var Assignmentlabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,6 +25,7 @@ class TestViewController: UIViewController {
         var a: Assignment = Assignment(assignmentName: "10.2", dueDate: NSDate(), timeToComplete: 2.2, details: "#1,2,3")
             a.setTimeToComplete(10.0, newTimeMinutes: 10.0)
         println(a.timeToComplete)
+        Assignmentlabel.text = a.getDescription()
             
     }
     
