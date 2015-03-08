@@ -11,11 +11,12 @@ import Foundation
 class Assignment {
     
     var assignmentName: String!
-    var timeSpent: Double = 0.0
-    var timeToComplete = 0.0
+    var timeSpent: NSTimeInterval = 0.0
+    var timeToComplete: NSTimeInterval = 0.0
+    //var timeToComplete = 0.0
     var isCompleted = false
-    var dueDate:NSDate!
-    var forCourse:Course!
+    var dueDate: NSDate!
+    var forCourse: Course!
     var description: String!
     
     
@@ -29,14 +30,14 @@ class Assignment {
         }
     }
     func checkCompletion() -> Bool{
-        if(timeToComplete<timeSpent || timeToComplete==timeSpent){
+        if(timeSpent >= timeToComplete){
             return true
         }
         return false
     }
     
     func setTimeToComplete(newTimeHours : Double, newTimeMinutes : Double){
-        timeToComplete = newTimeMinutes + (newTimeHours*60)
+        timeToComplete = newTimeMinutes * 60 + (newTimeHours*60*60)
     }
     
     
