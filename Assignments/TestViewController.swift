@@ -22,7 +22,7 @@ class TestViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func TestAssignment(sender: AnyObject) {
-        var a: Assignment = Assignment(assignmentName: "10.2", dueDate: NSDate(), timeToComplete: 2.2, details: "#1,2,3")
+        var a: Assignment = Assignment(assignmentName: "10.2", dueDate: NSDate(), timeToComplete: 2.2, Details: "#1,2,3")
             a.setTimeToComplete(10.0, newTimeMinutes: 10.0)
         println(a.timeToComplete)
         Assignmentlabel.text = a.getDescription()

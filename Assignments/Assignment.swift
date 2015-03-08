@@ -16,16 +16,16 @@ class Assignment {
     var isCompleted = false
     var dueDate:NSDate!
     var forCourse:Course!
-    var description: String?
+    var detail: String?
     
     
     
-    init(assignmentName name: String, dueDate due: NSDate, timeToComplete time: Double, details: String?){
+    init(assignmentName name: String, dueDate due: NSDate, timeToComplete time: Double, Details: String?){
         assignmentName = name
         timeToComplete = time
         dueDate = due
-        if let a = description?{
-           self.description = details
+        if let a = Details?{
+           self.detail = Details
         }
     }
     func checkCompletion() -> Bool{
@@ -39,8 +39,8 @@ class Assignment {
         timeToComplete = newTimeMinutes + (newTimeHours*60)
     }
     func getDescription() -> String{
-        if let a = description?{
-            return assignmentName + ":" + a}
+        if let a = detail?{
+            return assignmentName + "\n   " + a}
         else{
             return assignmentName
         }
