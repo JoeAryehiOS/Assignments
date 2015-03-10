@@ -17,9 +17,17 @@ class TableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
         CourseList.List.addCourse("Math", number: 603)
-        CourseList.List.list[0].Assignments.append(Assignment(assignmentName: "10.3", dueDate: NSDate(), timeToComplete: 10.0, Details: "1,2,3'"))
+        CourseList.List.list[0].Assignments.append(Assignment(assignmentName: "10.3", dueDate: NSDate(), timeToComplete: 10.0, Details: "1,2,3"))
+        CourseList.List.list[0].Assignments.append(Assignment(assignmentName: "10.4", dueDate: NSDate(), timeToComplete: 10.0, Details: "1,2,3"))
+        CourseList.List.list[0].Assignments.append(Assignment(assignmentName: "10.5", dueDate: NSDate(), timeToComplete: 10.0, Details: "1,2,3"))
+        
+        CourseList.List.addCourse("English", number: 603)
+        CourseList.List.list[1].Assignments.append(Assignment(assignmentName: "ASND", dueDate: NSDate(), timeToComplete: 10.0, Details: "Read 12-14"))
+        CourseList.List.addCourse("Englih", number: 603)
+        CourseList.List.list[1].Assignments.append(Assignment(assignmentName: "ASND", dueDate: NSDate(), timeToComplete: 10.0, Details: "Read 12-14"))
+        
         
     
     }
@@ -54,27 +62,27 @@ class TableViewController: UITableViewController {
         return cell
     }
     
-
-    /*
+   
+    
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             // Delete the row from the data source
+            CourseList.List.list[indexPath.section].Assignments.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+                        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
-
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
