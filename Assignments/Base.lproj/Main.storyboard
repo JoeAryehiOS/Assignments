@@ -71,7 +71,7 @@
             </objects>
             <point key="canvasLocation" x="2637" y="-336"/>
         </scene>
-        <!--Title-->
+        <!--View Controller-->
         <scene sceneID="pGy-DG-LCu">
             <objects>
                 <viewController id="VGY-6a-8Lg" sceneMemberID="viewController">
@@ -86,17 +86,16 @@
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OTb-kh-oBm">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <items>
-                                    <navigationItem title="Title" id="xCY-y0-bZC"/>
+                                    <navigationItem title="Assignment:" id="xCY-y0-bZC"/>
                                 </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="Vyf-Ha-egi"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Osv-5I-Ntb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3401" y="-706"/>
+            <point key="canvasLocation" x="3394" y="-667"/>
         </scene>
         <!--List View-->
         <scene sceneID="wg7-f3-ORb">
