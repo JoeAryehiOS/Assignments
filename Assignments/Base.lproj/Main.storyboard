@@ -71,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="2637" y="-336"/>
         </scene>
-        <!--View Controller-->
+        <!--Assignment-->
         <scene sceneID="pGy-DG-LCu">
             <objects>
-                <viewController id="VGY-6a-8Lg" sceneMemberID="viewController">
+                <viewController id="VGY-6a-8Lg" customClass="AssignmentDetailViewController" customModule="Assignments" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0PB-kk-2vr"/>
                         <viewControllerLayoutGuide type="bottom" id="n5p-yB-1Zm"/>
@@ -82,16 +82,12 @@
                     <view key="view" contentMode="scaleToFill" id="Rtn-k7-pMr">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OTb-kh-oBm">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Assignment:" id="xCY-y0-bZC"/>
-                                </items>
-                            </navigationBar>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Assignment" id="tWK-te-ity"/>
+                    <connections>
+                        <outlet property="Title" destination="tWK-te-ity" id="8QE-eC-oAc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Osv-5I-Ntb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

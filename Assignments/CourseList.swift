@@ -16,6 +16,7 @@ class CourseList{
         return Singleton.instance
     }
     var list: [Course] = Array()
+    var current: Int = 0
     func addCourse(name: String, number: Int?){
         list.append(Course(courseName: name, courseNumber: number))
         

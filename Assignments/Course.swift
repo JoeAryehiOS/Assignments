@@ -14,6 +14,7 @@ class Course{
     var courseName: String
     var courseNumber: Int?
     var Assignments: [Assignment] = []
+    var current: Int = 0
     //TODO MAKE THIS USEFUL
     init(courseName name: String, courseNumber number: Int?){
         courseName = name

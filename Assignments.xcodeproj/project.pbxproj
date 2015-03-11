@@ -19,6 +19,7 @@
 		DD81BA4F1A9E60F800F04B40 /* AssignmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81BA4E1A9E60F800F04B40 /* AssignmentsTests.swift */; };
 		DDC88AEE1AABC87D00DE36A1 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDC88AED1AABC87D00DE36A1 /* TestViewController.swift */; };
 		DDDAB5151AADEE5800467593 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDAB5141AADEE5800467593 /* TableViewController.swift */; };
+		DDDAB5171AB0698000467593 /* AssignmentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDAB5161AB0698000467593 /* AssignmentDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		DD81BA4E1A9E60F800F04B40 /* AssignmentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentsTests.swift; sourceTree = "<group>"; };
 		DDC88AED1AABC87D00DE36A1 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		DDDAB5141AADEE5800467593 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		DDDAB5161AB0698000467593 /* AssignmentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				DD4D209B1AABAB8D005E722C /* CourseList.swift */,
 				DDC88AED1AABC87D00DE36A1 /* TestViewController.swift */,
 				DDDAB5141AADEE5800467593 /* TableViewController.swift */,
+				DDDAB5161AB0698000467593 /* AssignmentDetailViewController.swift */,
 			);
 			path = Assignments;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDDAB5171AB0698000467593 /* AssignmentDetailViewController.swift in Sources */,
 				DDC88AEE1AABC87D00DE36A1 /* TestViewController.swift in Sources */,
 				C879E9001AA77924002B61D1 /* Assignment.swift in Sources */,
 				DD81BA3B1A9E60F300F04B40 /* SecondViewController.swift in Sources */,
