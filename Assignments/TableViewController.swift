@@ -16,7 +16,7 @@ class TableViewController: UITableViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
         
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject:")
+        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject")
         self.navigationItem.rightBarButtonItem = addButton
                 
         
@@ -31,7 +31,9 @@ class TableViewController: UITableViewController {
         
     
     }
-
+    func insertNewObject(){
+    
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
