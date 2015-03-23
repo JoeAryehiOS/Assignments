@@ -26,7 +26,6 @@
         <!--List-->
         <scene sceneID="5Fo-TT-n7x">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JPu-6v-woK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="E6Y-4W-K7o" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="List" id="WST-f0-eXc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iux-SL-KIG">
@@ -37,6 +36,7 @@
                         <segue destination="3Ka-ud-WzA" kind="relationship" relationship="rootViewController" id="idq-2e-Bdy"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JPu-6v-woK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1646" y="-366"/>
         </scene>
