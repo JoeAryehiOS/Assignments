@@ -45,5 +45,7 @@ class Assignment {
             return assignmentName
         }
     }
-    
+    func checkPercentage() -> Double{
+        return timeSpent/timeToComplete
+            }
 }
