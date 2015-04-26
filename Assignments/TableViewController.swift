@@ -32,7 +32,10 @@ class TableViewController: UITableViewController {
     
     }
     func insertNewObject(){
-    
+        CourseList.List.list.append(Course(courseName: "Math", courseNumber: 603))
+        CourseList.List.list[0].Assignments.append(Assignment(assignmentName: "10.3", dueDate: NSDate(), timeToComplete: 20, Details: "1,2,3"))
+        tableView.reloadData()
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -105,6 +108,18 @@ class TableViewController: UITableViewController {
         }
         
     }
+    
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            CourseList.List.list[indexPath.section].Assignments.removeAtIndex(CourseList.List.list[indexPath.section].Assignments.count - indexPath.row - 1)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+            
+                  }
+    }
+
     
     
 
