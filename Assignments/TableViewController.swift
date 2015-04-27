@@ -14,13 +14,13 @@ class TableViewController: UITableViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+//        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+//        
+//        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject")
+//        self.navigationItem.rightBarButtonItem = addButton
         
-        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject")
-        self.navigationItem.rightBarButtonItem = addButton
-                
         
-        
+       
 
 
         // Uncomment the following line to preserve selection between presentations
@@ -32,7 +32,7 @@ class TableViewController: UITableViewController {
     
     }
     func insertNewObject(){
-    
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -98,13 +98,7 @@ class TableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        if let indexPath = self.tableView.indexPathForSelectedRow(){
-            CourseList.List.current = indexPath.section
-            CourseList.List.list[indexPath.section].current = indexPath.row
-           
-        }
-        
-    }
+            }
     
     
 
