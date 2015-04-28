@@ -9,18 +9,26 @@
 import UIKit
 
 class AssignmentDetailViewController: UIViewController {
+    @IBOutlet weak var AssignmentNameField: UITextField!
 
-    @IBOutlet weak var Title: UINavigationItem!
-       override func viewDidLoad() {
+    @IBOutlet weak var AssignmentDetails: UITextView!
+    @IBOutlet weak var DueDate: UIDatePicker!
+    override func viewDidLoad() {
         super.viewDidLoad()
         
     }
 
+    @IBOutlet weak var Course: UIPickerView!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     @IBAction func Add(sender: AnyObject) {
+        
+       
+        let assignment: Assignment = Assignment(assignmentName: AssignmentNameField.text, dueDate: DueDate.date, timeToComplete: 0, Details: AssignmentDetails.text)
+        CourseList.List.list[Course.selectedRowInComponent(0)].Assignments.append(assignment)
+        
         dismissViewControllerAnimated(true, completion: nil)
     }
     
