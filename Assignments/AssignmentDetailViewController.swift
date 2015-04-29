@@ -9,6 +9,7 @@
 import UIKit
 
 class AssignmentDetailViewController: UIViewController {
+    var ac: assignmentCourse?
     @IBOutlet weak var AssignmentNameField: UITextField!
 
     @IBOutlet weak var AssignmentDetails: UITextView!
@@ -42,4 +43,7 @@ class AssignmentDetailViewController: UIViewController {
     }
     */
 
+}
+enum assignmentCourse{
+    case Course, Assignment
 }

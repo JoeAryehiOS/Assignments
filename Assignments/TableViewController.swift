@@ -32,9 +32,7 @@ class TableViewController: UITableViewController {
     
     }
     
-    @IBAction func Add(sender: AnyObject) {
-        
-    }
+   
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -73,7 +71,7 @@ class TableViewController: UITableViewController {
         return true
     }
     
-
+    
     
     // Override to support editing the table view.
     
@@ -97,9 +95,7 @@ class TableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-            }
+                          }
     
     
 
