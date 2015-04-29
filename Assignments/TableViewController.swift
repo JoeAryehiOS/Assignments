@@ -31,8 +31,9 @@ class TableViewController: UITableViewController {
         
     
     }
-    func insertNewObject(){
-
+    
+    @IBAction func Add(sender: AnyObject) {
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

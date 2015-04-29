@@ -88,7 +88,8 @@
                     <navigationItem key="navigationItem" id="pBY-yV-I6r">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YZw-er-Y6y">
                             <connections>
-                                <segue destination="VGY-6a-8Lg" kind="modal" id="F4C-Qx-pWq"/>
+                                <action selector="Add:" destination="3Ka-ud-WzA" id="lxm-Jq-iwt"/>
+                                <segue destination="VGY-6a-8Lg" kind="show" id="F6Y-D7-Od8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -213,7 +214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Osv-5I-Ntb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3394" y="-624"/>
+            <point key="canvasLocation" x="3612" y="-336"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">

@@ -26,8 +26,7 @@ class AssignmentDetailViewController: UIViewController {
     @IBAction func Add(sender: AnyObject) {
         
        
-        let assignment: Assignment = Assignment(assignmentName: AssignmentNameField.text, dueDate: DueDate.date, timeToComplete: 0, Details: AssignmentDetails.text)
-        CourseList.List.list[Course.selectedRowInComponent(0)].Assignments.append(assignment)
+      
         
         dismissViewControllerAnimated(true, completion: nil)
     }
