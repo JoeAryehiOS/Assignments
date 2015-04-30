@@ -10,27 +10,44 @@ import UIKit
 
 class AssignmentDetailViewController: UIViewController {
     var ac: assignmentCourse?
-    @IBOutlet weak var AssignmentNameField: UITextField!
-
-    @IBOutlet weak var AssignmentDetails: UITextView!
-    @IBOutlet weak var DueDate: UIDatePicker!
-    override func viewDidLoad() {
+        override func viewDidLoad() {
         super.viewDidLoad()
         
     }
 
-    @IBOutlet weak var Course: UIPickerView!
+   
+    @IBOutlet weak var CourseField: UITextField!
+    @IBOutlet weak var TimePicker: UIPickerView!
+    @IBOutlet weak var DatePicker: UIDatePicker!
+    @IBOutlet weak var DetailField: UITextView!
+    @IBOutlet weak var NameField: UITextField!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     @IBAction func Add(sender: AnyObject) {
-        
-       
-      
-        
         dismissViewControllerAnimated(true, completion: nil)
     }
+    @IBAction func CourseSelection(sender: AnyObject) {
+        let alert = UIAlertController(title: nil, message: "Choose Course", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        for i in CourseList.List.list{
+            alert.addAction(UIAlertAction(title: i.courseName, style: UIAlertActionStyle.Default){
+                action in
+                self.CourseField.text = self.title
+                         })
+        }
+        alert.addAction(UIAlertAction(title: "Other", style: .Default){
+            action in
+            self.performSegueWithIdentifier("CourseFromAssignment", sender: self)
+            })
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    
+      
+    
+    
     
 
     /*
