@@ -31,6 +31,24 @@ class TableViewController: UITableViewController {
         
     
     }
+    @IBAction func Add(sender: AnyObject) {
+        let alert = UIAlertController(title: "Add", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let courseAction = UIAlertAction(title: "Course", style: UIAlertActionStyle.Default){
+            action in
+           self.performSegueWithIdentifier("Course", sender: self)
+            
+        }
+        let assignmentAction = UIAlertAction(title: "Assignment", style: UIAlertActionStyle.Default){
+            action in
+            self.performSegueWithIdentifier("Assignment", sender: self)
+            
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+        alert.addAction(courseAction)
+        alert.addAction(assignmentAction)
+        alert.addAction(cancelAction)
+        presentViewController(alert, animated: true, completion: nil)
+    }
     
    
     override func didReceiveMemoryWarning() {

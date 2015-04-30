@@ -88,16 +88,28 @@
                     <navigationItem key="navigationItem" id="pBY-yV-I6r">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YZw-er-Y6y">
                             <connections>
-                                <segue destination="VGY-6a-8Lg" kind="popoverPresentation" popoverAnchorBarButtonItem="YZw-er-Y6y" id="F6Y-D7-Od8">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
+                                <action selector="Add:" destination="3Ka-ud-WzA" id="knR-TK-cdq"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="VGY-6a-8Lg" kind="popoverPresentation" identifier="Assignment" popoverAnchorView="DBy-iZ-Hhz" id="gvP-do-20f">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                            <popoverPassthroughViews>
+                                <tableView reference="DBy-iZ-Hhz"/>
+                            </popoverPassthroughViews>
+                        </segue>
+                        <segue destination="SkM-X5-BEC" kind="popoverPresentation" identifier="Course" popoverAnchorView="DBy-iZ-Hhz" id="WMh-Bs-E7C">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                            <popoverPassthroughViews>
+                                <tableView reference="DBy-iZ-Hhz"/>
+                            </popoverPassthroughViews>
+                        </segue>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDa-AK-087" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2637" y="-336"/>
+            <point key="canvasLocation" x="2921" y="-375"/>
         </scene>
         <!--Assignment-->
         <scene sceneID="pGy-DG-LCu">
@@ -216,6 +228,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Osv-5I-Ntb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3612" y="-336"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="n9z-dT-kcg">
+            <objects>
+                <viewController id="SkM-X5-BEC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3A7-5z-Zim"/>
+                        <viewControllerLayoutGuide type="bottom" id="xVR-eY-JIS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fzC-lX-h0x">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2wE-4L-Jbn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3479" y="-1073"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
