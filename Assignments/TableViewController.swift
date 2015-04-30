@@ -12,7 +12,7 @@ class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.reloadData()
+       
         
         // Do any additional setup after loading the view, typically from a nib.
 //        self.navigationItem.leftBarButtonItem = self.editButtonItem()
@@ -70,7 +70,9 @@ class TableViewController: UITableViewController {
         // Return the number of rows in the section.
         return CourseList.List.list[section].Assignments.count
     }
-
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return CourseList.List.list[section].courseName
+    }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Reuse Identifier", forIndexPath: indexPath) as UITableViewCell
