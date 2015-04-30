@@ -14,8 +14,9 @@ class AssignmentDetailViewController: UIViewController {
         super.viewDidLoad()
         
     }
+    
 
-   
+    var courseIndex: Int?
     @IBOutlet weak var CourseField: UITextField!
     @IBOutlet weak var TimePicker: UIPickerView!
     @IBOutlet weak var DatePicker: UIDatePicker!
@@ -28,20 +29,28 @@ class AssignmentDetailViewController: UIViewController {
     
     @IBAction func Add(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
-    }
+        let assignment = Assignment(assignmentName: NameField.text, dueDate: DatePicker.date, timeToComplete: 0, Details: DetailField.text)
+        //need to add timeToComplete
+      CourseList.List.list[courseIndex!].Assignments.append(assignment)
+           }
     @IBAction func CourseSelection(sender: AnyObject) {
         let alert = UIAlertController(title: nil, message: "Choose Course", preferredStyle: UIAlertControllerStyle.ActionSheet)
-        for i in CourseList.List.list{
-            alert.addAction(UIAlertAction(title: i.courseName, style: UIAlertActionStyle.Default){
+        for i in enumerate(CourseList.List.list){
+            alert.addAction(UIAlertAction(title: i.element.courseName, style: UIAlertActionStyle.Default){
                 action in
-                self.CourseField.text = self.title
+                self.CourseField.text = i.element.courseName
+                self.courseIndex = i.index
                          })
         }
         alert.addAction(UIAlertAction(title: "Other", style: .Default){
             action in
             self.performSegueWithIdentifier("CourseFromAssignment", sender: self)
+           
             })
-        presentViewController(alert, animated: true, completion: nil)
+        presentViewController(alert, animated: true){
+            action in
+           
+        }
     }
     
     
