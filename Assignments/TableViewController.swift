@@ -81,7 +81,8 @@ class TableViewController: UITableViewController {
        
         cell.textLabel?.text = CourseList.List.list[indexPath.section].Assignments[indexPath.row].assignmentName
         var detail = CourseList.List.list[indexPath.section].Assignments[indexPath.row].detail!
-        var date = CourseList.List.list[indexPath.section].Assignments[indexPath.row].dueDate!
+        var date = CourseList.List.list[indexPath.section].Assignments[indexPath.row].dueDate
+               
         cell.detailTextLabel?.text = "\(date)   \(detail)"
         return cell
     }
