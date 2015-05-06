@@ -21,7 +21,7 @@ class TableViewController: UITableViewController {
 //        self.navigationItem.rightBarButtonItem = addButton
         
         
-       
+            self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
 
         // Uncomment the following line to preserve selection between presentations
