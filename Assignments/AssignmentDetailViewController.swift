@@ -28,11 +28,12 @@ class AssignmentDetailViewController: UIViewController, UIPickerViewDelegate, UI
     }
     
     @IBAction func Add(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+        //dismissViewControllerAnimated(true, completion: nil)
         var time: Double = Double(TimePicker.selectedRowInComponent(0) * 60) + Double(TimePicker.selectedRowInComponent(1))
         let assignment = Assignment(assignmentName: NameField.text, dueDate: DatePicker.date, timeToComplete: time, Details: DetailField.text)
         //need to add timeToComplete
       CourseList.List.list[courseIndex!].Assignments.append(assignment)
+         dismissViewControllerAnimated(true, completion: nil)
            }
     @IBAction func CourseSelection(sender: AnyObject) {
         let alert = UIAlertController(title: nil, message: "Choose Course", preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -46,14 +47,9 @@ class AssignmentDetailViewController: UIViewController, UIPickerViewDelegate, UI
         alert.addAction(UIAlertAction(title: "Other", style: .Default){
             action in
             self.performSegueWithIdentifier("CourseFromAssignment", sender: self)
-           
-            })
-        presentViewController(alert, animated: true){
-            action in
-           
-        }
+                        })
+        presentViewController(alert, animated: true, completion: nil)
     }
-    
     
     
     
