@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AssignmentDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AssignmentDetailViewController: UIViewController {
     var ac: assignmentCourse?
         override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,12 +28,10 @@ class AssignmentDetailViewController: UIViewController, UIPickerViewDelegate, UI
     }
     
     @IBAction func Add(sender: AnyObject) {
-        //dismissViewControllerAnimated(true, completion: nil)
-        var time: Double = Double(TimePicker.selectedRowInComponent(0) * 60) + Double(TimePicker.selectedRowInComponent(1))
-        let assignment = Assignment(assignmentName: NameField.text, dueDate: DatePicker.date, timeToComplete: time, Details: DetailField.text)
+        dismissViewControllerAnimated(true, completion: nil)
+        let assignment = Assignment(assignmentName: NameField.text, dueDate: DatePicker.date, timeToComplete: 0, Details: DetailField.text)
         //need to add timeToComplete
       CourseList.List.list[courseIndex!].Assignments.append(assignment)
-         dismissViewControllerAnimated(true, completion: nil)
            }
     @IBAction func CourseSelection(sender: AnyObject) {
         let alert = UIAlertController(title: nil, message: "Choose Course", preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -47,30 +45,19 @@ class AssignmentDetailViewController: UIViewController, UIPickerViewDelegate, UI
         alert.addAction(UIAlertAction(title: "Other", style: .Default){
             action in
             self.performSegueWithIdentifier("CourseFromAssignment", sender: self)
-                        })
-        presentViewController(alert, animated: true, completion: nil)
+           
+            })
+        presentViewController(alert, animated: true){
+            action in
+           
+        }
     }
     
     
+      
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-        return 2
-    }
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        if(component == 0){
-            return 100
-        }
-        else{
-            return 60
-        }
-    }
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
-        if(component == 0){
-            return "\(row) hours"
-        }else{
-            return "\(row) minutes"
-        }
-    }
+    
+    
 
     /*
     // MARK: - Navigation

@@ -25,13 +25,7 @@ class CourseViewController: UIViewController {
     @IBAction func Add(sender: AnyObject) {
         let course = Course(courseName: CourseNameField.text, courseNumber: CourseNumberField.text.toInt())
         CourseList.List.list.append(course)
-        dismissViewControllerAnimated(true){
-             action in
-              let a = self.navigationController?.viewControllers[self.navigationController!.viewControllers.endIndex! - 1] as AssignmentDetailViewController
-            a.CourseField.text = CourseList.List.list[CourseList.List.list.count - 1].courseName
-            a.courseIndex = CourseList.List.list.count - 1
-
-        }
+        dismissViewControllerAnimated(true, completion: nil)
             }
     
 
