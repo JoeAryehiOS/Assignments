@@ -71,6 +71,7 @@ class TableViewController: UITableViewController {
         return CourseList.List.list[section].Assignments.count
     }
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let a = CourseList.List.list
         return CourseList.List.list[section].courseName
     }
     

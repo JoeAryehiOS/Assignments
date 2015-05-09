@@ -26,7 +26,7 @@ class CourseViewController: UIViewController {
         let course = Course(courseName: CourseNameField.text, courseNumber: CourseNumberField.text.toInt())
         CourseList.List.list.append(course)
         dismissViewControllerAnimated(true, completion: nil)
-            
-        print("hi")
+        let a = CourseList.List.list
+        println("hi")
                    }
 }
