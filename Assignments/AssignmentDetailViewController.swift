@@ -28,10 +28,12 @@ class AssignmentDetailViewController: UIViewController {
     }
     
     @IBAction func Add(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+        
         let assignment = Assignment(assignmentName: NameField.text, dueDate: DatePicker.date, timeToComplete: 0, Details: DetailField.text)
         //need to add timeToComplete
       CourseList.List.list[courseIndex!].Assignments.append(assignment)
+        //self.presentingViewController?.reloadInputViews()
+        dismissViewControllerAnimated(true, completion: nil)
            }
     @IBAction func CourseSelection(sender: AnyObject) {
         let alert = UIAlertController(title: nil, message: "Choose Course", preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -47,11 +49,7 @@ class AssignmentDetailViewController: UIViewController {
             self.performSegueWithIdentifier("CourseFromAssignment", sender: self)
            
             })
-        presentViewController(alert, animated: true){
-            action in
-           
-        }
-    }
+        presentViewController(alert, animated: true, completion: nil)    }
     
     
       

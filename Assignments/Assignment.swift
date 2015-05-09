@@ -24,7 +24,7 @@ class Assignment {
         assignmentName = name
         timeToComplete = time
         dueDate = due
-        if let a = Details?{
+        if let a = Details{
            self.detail = Details
         }
     }
@@ -39,7 +39,7 @@ class Assignment {
         timeToComplete = newTimeMinutes + (newTimeHours*60)
     }
     func getDescription() -> String{
-        if let a = detail?{
+        if let a = detail{
             return assignmentName + "\n   " + a}
         else{
             return assignmentName

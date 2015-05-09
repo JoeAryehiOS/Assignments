@@ -26,17 +26,7 @@ class CourseViewController: UIViewController {
         let course = Course(courseName: CourseNameField.text, courseNumber: CourseNumberField.text.toInt())
         CourseList.List.list.append(course)
         dismissViewControllerAnimated(true, completion: nil)
-            }
-    
-
-    /*
-    // MARK: - Nav  igation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+            
+        print("hi")
+                   }
 }
