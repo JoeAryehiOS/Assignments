@@ -12,6 +12,7 @@ class CourseViewController: UIViewController {
 
     @IBOutlet weak var CourseNumberField: UITextField!
     @IBOutlet weak var CourseNameField: UITextField!
+    var fromAssignment = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,8 +26,8 @@ class CourseViewController: UIViewController {
     @IBAction func Add(sender: AnyObject) {
         let course = Course(courseName: CourseNameField.text, courseNumber: CourseNumberField.text.toInt())
         CourseList.List.list.append(course)
+        
+        
         dismissViewControllerAnimated(true, completion: nil)
-        let a = CourseList.List.list
-        println("hi")
                    }
 }

@@ -17,6 +17,7 @@ class AssignmentDetailViewController: UIViewController {
     
 
     var courseIndex: Int?
+    var fromCourse = false
     @IBOutlet weak var CourseField: UITextField!
     @IBOutlet weak var TimePicker: UIPickerView!
     @IBOutlet weak var DatePicker: UIDatePicker!
@@ -46,13 +47,20 @@ class AssignmentDetailViewController: UIViewController {
         }
         alert.addAction(UIAlertAction(title: "Other", style: .Default){
             action in
+            self.fromCourse = true
             self.performSegueWithIdentifier("CourseFromAssignment", sender: self)
-           
+            
             })
         presentViewController(alert, animated: true, completion: nil)    }
     
     
-      
+    override func viewDidAppear(animated: Bool) {
+        if(fromCourse){
+            CourseField.text = CourseList.List.list[CourseList.List.list.count - 1].courseName
+            courseIndex = CourseList.List.list.count - 1
+            fromCourse = false
+        }
+    }
     
     
     

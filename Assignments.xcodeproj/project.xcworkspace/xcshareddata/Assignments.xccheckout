@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>55FABF7E-F7D1-4F8E-84B0-37153E8BF682</string>
 	<key>IDESourceControlProjectName</key>
-	<string>Assignments</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>017F9BF25B296EBC0BCE3760F8485008E81A8E5B</key>
 		<string>https://github.com/JoeAryehiOS/Assignments.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Assignments.xcodeproj</string>
+	<string>Assignments.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>017F9BF25B296EBC0BCE3760F8485008E81A8E5B</key>

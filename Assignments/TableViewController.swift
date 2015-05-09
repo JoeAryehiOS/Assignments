@@ -71,7 +71,7 @@ class TableViewController: UITableViewController {
         return CourseList.List.list[section].Assignments.count
     }
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        let a = CourseList.List.list
+        
         return CourseList.List.list[section].courseName
     }
     
@@ -83,17 +83,20 @@ class TableViewController: UITableViewController {
         cell.textLabel?.text = CourseList.List.list[indexPath.section].Assignments[indexPath.row].assignmentName
         var detail = CourseList.List.list[indexPath.section].Assignments[indexPath.row].detail!
         var date = CourseList.List.list[indexPath.section].Assignments[indexPath.row].dueDate!
+        
         cell.detailTextLabel?.text = "\(date)   \(detail)"
         return cell
     }
     
-   
+    override func viewWillAppear(animated: Bool) {
+        tableView.reloadData()
+    }
     
     // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    /*override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return NO if you do not want the specified item to be editable.
         return true
-    }
+    }*/
     
     
     
@@ -119,6 +122,11 @@ class TableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "showAssignment"){
+            let indexPath = self.tableView.indexPathForSelectedRow()!
+            CourseList.List.current = indexPath.section
+            CourseList.List.list[CourseList.List.current].current = indexPath.row
+                    }
                           }
     
     
