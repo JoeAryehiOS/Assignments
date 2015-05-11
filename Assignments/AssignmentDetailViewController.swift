@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AssignmentDetailViewController: UIViewController {
+class AssignmentDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     var ac: assignmentCourse?
         override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +29,8 @@ class AssignmentDetailViewController: UIViewController {
     }
     
     @IBAction func Add(sender: AnyObject) {
-        
-        let assignment = Assignment(assignmentName: NameField.text, dueDate: DatePicker.date, timeToComplete: 0, Details: DetailField.text)
+        let time = Double(TimePicker.selectedRowInComponent(0) * 60) + Double(TimePicker.selectedRowInComponent(1))
+        let assignment = Assignment(assignmentName: NameField.text, dueDate: DatePicker.date, timeToComplete: time , Details: DetailField.text)
         //need to add timeToComplete
       CourseList.List.list[courseIndex!].Assignments.append(assignment)
         //self.presentingViewController?.reloadInputViews()
@@ -74,7 +74,27 @@ class AssignmentDetailViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        if(component == 0){
+            return 100
+        }
+        else{
+            return 60
+        }
+    }
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+        if(component == 0){
+            return "\(row) hours"
+        }
+        else{
+            return "\(row) minutes"
+        }
+    }
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+        return 2
+    }
+    
+    
 }
 enum assignmentCourse{
     case Course, Assignment

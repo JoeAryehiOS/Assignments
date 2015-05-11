@@ -14,7 +14,10 @@ class AssignmentTableViewController: UITableViewController {
     @IBOutlet weak var CourseField: UITextField!
     @IBOutlet weak var DetailView: UITextView!
     @IBOutlet weak var DueDatePicker: UIDatePicker!
+   
+    @IBOutlet weak var editButton: UIBarButtonItem!
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         let a = CourseList.List.list[CourseList.List.current].Assignments[CourseList.List.list[CourseList.List.current].current]
         NameField.text = a.assignmentName
@@ -25,7 +28,9 @@ class AssignmentTableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.navigationItem.title = a.assignmentName
+        DueDatePicker.userInteractionEnabled = false
+       
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,6 +38,11 @@ class AssignmentTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func Edit(sender: UIBarButtonItem) {
+        DueDatePicker.userInteractionEnabled = true
+        sender.title = "Save"
+    }
+    
     // MARK: - Table view data source
 
    /* override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -41,6 +51,7 @@ class AssignmentTableViewController: UITableViewController {
         return 0
     }
 
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
