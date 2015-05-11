@@ -15,6 +15,10 @@ class AssignmentTableViewController: UITableViewController {
     @IBOutlet weak var DetailView: UITextView!
     @IBOutlet weak var DueDatePicker: UIDatePicker!
    
+    @IBOutlet weak var TPIMinutes: UITextField!
+    @IBOutlet weak var TPIHours: UITextField!
+    @IBOutlet weak var TTCHours: UITextField!
+    @IBOutlet weak var TTCMinutes: UITextField!
     @IBOutlet weak var editButton: UIBarButtonItem!
     override func viewDidLoad() {
         
@@ -24,23 +28,47 @@ class AssignmentTableViewController: UITableViewController {
         CourseField.text = CourseList.List.list[CourseList.List.current].courseName
         DetailView.text = a.detail
         DueDatePicker.date = a.dueDate
+        TTCHours.text = "\(a.timeToComplete / 60)"
+        TTCMinutes.text = "\(a.timeToComplete % 60)"
+        TPIHours.text = "\(a.timeSpent / 60)"
+        TPIMinutes.text = "\(a.timeSpent % 60)"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.title = a.assignmentName
-        DueDatePicker.userInteractionEnabled = false
-       
+       Save()
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-    @IBAction func Edit(sender: UIBarButtonItem) {
+       func Save(){
+        NameField.userInteractionEnabled = false
+        CourseField.userInteractionEnabled = false
+        DetailView.userInteractionEnabled = false
+        DueDatePicker.userInteractionEnabled = false
+        TPIMinutes.userInteractionEnabled = false
+        TPIHours.userInteractionEnabled = false
+        TTCHours.userInteractionEnabled = false
+        TTCMinutes.userInteractionEnabled = false
+        let editButton = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "Edit")
+        self.navigationItem.rightBarButtonItem = editButton
+    }
+    func Edit(){
+        NameField.userInteractionEnabled = true
+        CourseField.userInteractionEnabled = true
+        DetailView.userInteractionEnabled = true
         DueDatePicker.userInteractionEnabled = true
-        sender.title = "Save"
+        TPIMinutes.userInteractionEnabled = true
+        TPIHours.userInteractionEnabled = true
+        TTCHours.userInteractionEnabled = true
+        TTCMinutes.userInteractionEnabled = true
+        let saveButton = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "Save")
+        self.navigationItem.rightBarButtonItem = saveButton
     }
     
     // MARK: - Table view data source
