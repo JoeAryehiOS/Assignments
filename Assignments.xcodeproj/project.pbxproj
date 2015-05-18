@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		C879E9001AA77924002B61D1 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C879E8FF1AA77924002B61D1 /* Assignment.swift */; };
 		C8A7FD471AA8A9EE0046E9AD /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7FD461AA8A9ED0046E9AD /* Course.swift */; };
+		DD2794621B0A1B8A0063E16C /* StudyPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2794611B0A1B8A0063E16C /* StudyPatternView.swift */; };
+		DD2794641B0A1BC30063E16C /* StudyPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2794631B0A1BC30063E16C /* StudyPattern.swift */; };
 		DD4D209C1AABAB8D005E722C /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4D209B1AABAB8D005E722C /* CourseList.swift */; };
 		DD8195511AF2014F00C1732A /* CourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8195501AF2014F00C1732A /* CourseViewController.swift */; };
 		DD81BA371A9E60F300F04B40 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81BA361A9E60F300F04B40 /* AppDelegate.swift */; };
@@ -37,6 +39,8 @@
 /* Begin PBXFileReference section */
 		C879E8FF1AA77924002B61D1 /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 		C8A7FD461AA8A9ED0046E9AD /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		DD2794611B0A1B8A0063E16C /* StudyPatternView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyPatternView.swift; sourceTree = "<group>"; };
+		DD2794631B0A1BC30063E16C /* StudyPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyPattern.swift; sourceTree = "<group>"; };
 		DD4D209B1AABAB8D005E722C /* CourseList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
 		DD8195501AF2014F00C1732A /* CourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseViewController.swift; sourceTree = "<group>"; };
 		DD81BA311A9E60F100F04B40 /* Assignments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Assignments.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -110,6 +114,8 @@
 				DDDAB5161AB0698000467593 /* AssignmentDetailViewController.swift */,
 				DD8195501AF2014F00C1732A /* CourseViewController.swift */,
 				DD86AB381AFE3BBC0039B294 /* AssignmentTableViewController.swift */,
+				DD2794611B0A1B8A0063E16C /* StudyPatternView.swift */,
+				DD2794631B0A1BC30063E16C /* StudyPattern.swift */,
 			);
 			path = Assignments;
 			sourceTree = "<group>";
@@ -246,6 +252,8 @@
 				DD81BA3B1A9E60F300F04B40 /* SecondViewController.swift in Sources */,
 				DDDAB5151AADEE5800467593 /* TableViewController.swift in Sources */,
 				C8A7FD471AA8A9EE0046E9AD /* Course.swift in Sources */,
+				DD2794641B0A1BC30063E16C /* StudyPattern.swift in Sources */,
+				DD2794621B0A1B8A0063E16C /* StudyPatternView.swift in Sources */,
 				DD86AB391AFE3BBC0039B294 /* AssignmentTableViewController.swift in Sources */,
 				DD81BA371A9E60F300F04B40 /* AppDelegate.swift in Sources */,
 				DD4D209C1AABAB8D005E722C /* CourseList.swift in Sources */,
