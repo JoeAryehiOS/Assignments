@@ -12,7 +12,8 @@ class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        let course = Course(courseName: "None", courseNumber: nil) // this is basically for independant assignments
+        CourseList.List.list.append(course)
         
         // Do any additional setup after loading the view, typically from a nib.
 //        self.navigationItem.leftBarButtonItem = self.editButtonItem()
