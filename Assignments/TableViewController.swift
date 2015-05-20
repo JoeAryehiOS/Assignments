@@ -82,10 +82,13 @@ class TableViewController: UITableViewController {
         
        
         cell.textLabel?.text = CourseList.List.list[indexPath.section].Assignments[indexPath.row].assignmentName
-        var detail = CourseList.List.list[indexPath.section].Assignments[indexPath.row].detail!
-        var date = CourseList.List.list[indexPath.section].Assignments[indexPath.row].dueDate!
-        
-        cell.detailTextLabel?.text = "\(date)   \(detail)"
+        let detail = CourseList.List.list[indexPath.section].Assignments[indexPath.row].detail!
+        let date = CourseList.List.list[indexPath.section].Assignments[indexPath.row].dueDate!
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy"
+        dateFormatter.timeZone = NSTimeZone.localTimeZone()
+
+        cell.detailTextLabel?.text = "\(dateFormatter.stringFromDate(date))   \(detail)"
         return cell
     }
     
