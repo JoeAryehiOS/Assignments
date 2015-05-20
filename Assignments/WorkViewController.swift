@@ -12,13 +12,19 @@ class WorkViewController: UIViewController {
     var timer: NSTimer!
     var components: NSDateComponents = NSDateComponents()
     var dateFormatter: NSDateFormatter = NSDateFormatter()
-    var calendar: NSCalendar = NSCalendar()
+    var calendar: NSCalendar = NSCalendar.autoupdatingCurrentCalendar()
     @IBOutlet weak var TimeLabel: UILabel!
     @IBOutlet weak var StudyPatternImageView: UIImageView!
     
+    @IBOutlet weak var PauseResumeButton: UIButton!
+    @IBOutlet weak var StartStopButton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        dateFormatter.
         dateFormatter.dateFormat = "hh:mm:ss"
+        components.second = 0
+        components.hour = 0
+        components.minute = 0
         
         // Do any additional setup after loading the view.
     }
@@ -31,9 +37,11 @@ class WorkViewController: UIViewController {
     @IBAction func StartStopButton(sender: UIButton) {
         switch(sender.titleLabel!.text!){
         case "Start":
-            sender.titleLabel!.text = "Stop"
+            StartStopButton.titleLabel!.text = "Stop"
+            startTimer()
         case "Stop":
-            sender.titleLabel!.text = "Start"
+            StartStopButton.titleLabel!.text = "Start"
+            stopTimer()
         default: break
             
         }
@@ -41,7 +49,7 @@ class WorkViewController: UIViewController {
     @IBAction func PauseButtonPressed(sender: UIButton) {
     }
     func startTimer(){
-        timer = NSTimer(timeInterval: 1, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
     }
     func pauseTimer(){
         invalidateTimer()
@@ -51,6 +59,8 @@ class WorkViewController: UIViewController {
         invalidateTimer()
         TimeLabel.text = "00:00:00"
         components.second = 0
+        components.minute = 0
+        components.hour = 0
        
     }
     func invalidateTimer(){
@@ -60,7 +70,9 @@ class WorkViewController: UIViewController {
     }
     func updateTime(){
         components.second++
-        TimeLabel.text = dateFormatter.stringFromDate(calendar.dateFromComponents(components)!)
+        let a = calendar.dateFromComponents(components)
+        TimeLabel.text = dateFormatter.stringFromDate(a!)
+        //print(dateFormatter.stringFromDate(calendar.dateFromComponents(components)!))
     }
     
 

@@ -63,13 +63,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gH7-1S-VUU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gH7-1S-VUU">
                                 <rect key="frame" x="213" y="107" width="174" height="102"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="174" id="z3W-r1-2b7"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="n2i-Yt-MQC">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="n2i-Yt-MQC">
                                 <rect key="frame" x="0.0" y="343" width="600" height="208"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -95,10 +98,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j53-Wv-y1O">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j53-Wv-y1O">
                                 <rect key="frame" x="86" y="206" width="429" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="dt0-UU-kVN"/>
+                                </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yW-2W-HJ0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yW-2W-HJ0">
                                 <rect key="frame" x="345" y="266" width="43" height="30"/>
                                 <state key="normal" title="Pause">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -107,7 +113,7 @@
                                     <action selector="PauseButtonPressed:" destination="VBR-xU-jNM" eventType="touchUpInside" id="Jxx-I9-WQG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5Z-2E-9c0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S5Z-2E-9c0">
                                 <rect key="frame" x="213" y="266" width="33" height="30"/>
                                 <state key="normal" title="Start">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -118,9 +124,27 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="S5Z-2E-9c0" firstAttribute="leading" secondItem="gH7-1S-VUU" secondAttribute="leading" id="6Tx-bA-9sa"/>
+                            <constraint firstItem="n2i-Yt-MQC" firstAttribute="bottom" secondItem="Suv-Cb-gYo" secondAttribute="top" id="COx-fs-R2y"/>
+                            <constraint firstItem="n2i-Yt-MQC" firstAttribute="leading" secondItem="LI4-UO-rtL" secondAttribute="leading" id="FGm-8L-jJR"/>
+                            <constraint firstItem="gH7-1S-VUU" firstAttribute="top" secondItem="7BB-bM-prp" secondAttribute="bottom" constant="87" id="Qnv-Ka-moO"/>
+                            <constraint firstItem="n2i-Yt-MQC" firstAttribute="centerX" secondItem="j53-Wv-y1O" secondAttribute="centerX" id="RFv-pO-uni"/>
+                            <constraint firstItem="S5Z-2E-9c0" firstAttribute="top" secondItem="gH7-1S-VUU" secondAttribute="bottom" constant="57" id="TNd-4N-YWb"/>
+                            <constraint firstItem="j53-Wv-y1O" firstAttribute="top" secondItem="7BB-bM-prp" secondAttribute="bottom" constant="186" id="UZR-in-lqC"/>
+                            <constraint firstItem="gH7-1S-VUU" firstAttribute="centerX" secondItem="j53-Wv-y1O" secondAttribute="centerX" id="ZJ5-3u-Dv6"/>
+                            <constraint firstItem="j53-Wv-y1O" firstAttribute="leading" secondItem="LI4-UO-rtL" secondAttribute="leadingMargin" constant="70" id="fjP-Is-xMn"/>
+                            <constraint firstAttribute="trailing" secondItem="n2i-Yt-MQC" secondAttribute="trailing" id="m40-BP-a8Q"/>
+                            <constraint firstItem="4yW-2W-HJ0" firstAttribute="baseline" secondItem="S5Z-2E-9c0" secondAttribute="baseline" id="n7T-Q5-x5Q"/>
+                            <constraint firstItem="S5Z-2E-9c0" firstAttribute="top" secondItem="j53-Wv-y1O" secondAttribute="bottom" constant="36" id="qj6-dZ-Mzg"/>
+                            <constraint firstItem="4yW-2W-HJ0" firstAttribute="leading" secondItem="S5Z-2E-9c0" secondAttribute="trailing" constant="99" id="sxK-Cv-eu4"/>
+                            <constraint firstItem="n2i-Yt-MQC" firstAttribute="top" secondItem="S5Z-2E-9c0" secondAttribute="bottom" constant="47" id="yuF-bc-eT8"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Work Space" id="Y2u-gG-21z"/>
                     <connections>
+                        <outlet property="PauseResumeButton" destination="4yW-2W-HJ0" id="SUr-35-wTw"/>
+                        <outlet property="StartStopButton" destination="S5Z-2E-9c0" id="epR-3H-hmc"/>
                         <outlet property="StudyPatternImageView" destination="j53-Wv-y1O" id="XRW-ZQ-bmv"/>
                         <outlet property="TimeLabel" destination="gH7-1S-VUU" id="Q1k-sY-6He"/>
                     </connections>
