@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -66,7 +66,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gH7-1S-VUU">
                                 <rect key="frame" x="213" y="107" width="174" height="102"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="174" id="z3W-r1-2b7"/>
+                                    <constraint firstAttribute="width" constant="174" id="hfL-2m-R9Q"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -101,7 +101,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j53-Wv-y1O">
                                 <rect key="frame" x="86" y="206" width="429" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="dt0-UU-kVN"/>
+                                    <constraint firstAttribute="height" constant="24" id="Umc-3Z-bu0"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yW-2W-HJ0">
@@ -119,34 +119,46 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="StartStopButton:" destination="VBR-xU-jNM" eventType="touchUpInside" id="D7l-Ad-B2M"/>
+                                    <action selector="Start:" destination="VBR-xU-jNM" eventType="touchUpInside" id="9eY-eF-LVV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kVc-hw-lJI">
+                                <rect key="frame" x="213" y="266" width="33" height="30"/>
+                                <state key="normal" title="Stop">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="Stop:" destination="VBR-xU-jNM" eventType="touchUpInside" id="Co8-TO-9lh"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="S5Z-2E-9c0" firstAttribute="leading" secondItem="gH7-1S-VUU" secondAttribute="leading" id="6Tx-bA-9sa"/>
-                            <constraint firstItem="n2i-Yt-MQC" firstAttribute="bottom" secondItem="Suv-Cb-gYo" secondAttribute="top" id="COx-fs-R2y"/>
-                            <constraint firstItem="n2i-Yt-MQC" firstAttribute="leading" secondItem="LI4-UO-rtL" secondAttribute="leading" id="FGm-8L-jJR"/>
-                            <constraint firstItem="gH7-1S-VUU" firstAttribute="top" secondItem="7BB-bM-prp" secondAttribute="bottom" constant="87" id="Qnv-Ka-moO"/>
-                            <constraint firstItem="n2i-Yt-MQC" firstAttribute="centerX" secondItem="j53-Wv-y1O" secondAttribute="centerX" id="RFv-pO-uni"/>
-                            <constraint firstItem="S5Z-2E-9c0" firstAttribute="top" secondItem="gH7-1S-VUU" secondAttribute="bottom" constant="57" id="TNd-4N-YWb"/>
-                            <constraint firstItem="j53-Wv-y1O" firstAttribute="top" secondItem="7BB-bM-prp" secondAttribute="bottom" constant="186" id="UZR-in-lqC"/>
-                            <constraint firstItem="gH7-1S-VUU" firstAttribute="centerX" secondItem="j53-Wv-y1O" secondAttribute="centerX" id="ZJ5-3u-Dv6"/>
-                            <constraint firstItem="j53-Wv-y1O" firstAttribute="leading" secondItem="LI4-UO-rtL" secondAttribute="leadingMargin" constant="70" id="fjP-Is-xMn"/>
-                            <constraint firstAttribute="trailing" secondItem="n2i-Yt-MQC" secondAttribute="trailing" id="m40-BP-a8Q"/>
-                            <constraint firstItem="4yW-2W-HJ0" firstAttribute="baseline" secondItem="S5Z-2E-9c0" secondAttribute="baseline" id="n7T-Q5-x5Q"/>
-                            <constraint firstItem="S5Z-2E-9c0" firstAttribute="top" secondItem="j53-Wv-y1O" secondAttribute="bottom" constant="36" id="qj6-dZ-Mzg"/>
-                            <constraint firstItem="4yW-2W-HJ0" firstAttribute="leading" secondItem="S5Z-2E-9c0" secondAttribute="trailing" constant="99" id="sxK-Cv-eu4"/>
-                            <constraint firstItem="n2i-Yt-MQC" firstAttribute="top" secondItem="S5Z-2E-9c0" secondAttribute="bottom" constant="47" id="yuF-bc-eT8"/>
+                            <constraint firstItem="S5Z-2E-9c0" firstAttribute="baseline" secondItem="4yW-2W-HJ0" secondAttribute="baseline" id="0Hl-87-eBE"/>
+                            <constraint firstItem="kVc-hw-lJI" firstAttribute="top" secondItem="gH7-1S-VUU" secondAttribute="bottom" constant="57" id="0mW-p0-gzh"/>
+                            <constraint firstItem="n2i-Yt-MQC" firstAttribute="bottom" secondItem="Suv-Cb-gYo" secondAttribute="top" id="Cju-pf-BqQ"/>
+                            <constraint firstItem="kVc-hw-lJI" firstAttribute="leading" secondItem="gH7-1S-VUU" secondAttribute="leading" id="FBR-am-9At"/>
+                            <constraint firstAttribute="trailing" secondItem="n2i-Yt-MQC" secondAttribute="trailing" id="KA0-DS-4EO"/>
+                            <constraint firstItem="S5Z-2E-9c0" firstAttribute="top" secondItem="kVc-hw-lJI" secondAttribute="top" id="OGi-qD-sCg"/>
+                            <constraint firstItem="n2i-Yt-MQC" firstAttribute="leading" secondItem="LI4-UO-rtL" secondAttribute="leading" id="Ufg-od-RPz"/>
+                            <constraint firstItem="4yW-2W-HJ0" firstAttribute="leading" secondItem="S5Z-2E-9c0" secondAttribute="trailing" constant="99" id="XmJ-AY-Fwl"/>
+                            <constraint firstItem="j53-Wv-y1O" firstAttribute="leading" secondItem="LI4-UO-rtL" secondAttribute="leadingMargin" constant="70" id="blP-1t-FbN"/>
+                            <constraint firstItem="S5Z-2E-9c0" firstAttribute="leading" secondItem="kVc-hw-lJI" secondAttribute="leading" id="cV1-NO-kOo"/>
+                            <constraint firstItem="gH7-1S-VUU" firstAttribute="top" secondItem="7BB-bM-prp" secondAttribute="bottom" constant="87" id="j7Y-lZ-uV2"/>
+                            <constraint firstItem="n2i-Yt-MQC" firstAttribute="top" secondItem="kVc-hw-lJI" secondAttribute="bottom" constant="47" id="jxV-Oj-Ai3"/>
+                            <constraint firstItem="j53-Wv-y1O" firstAttribute="centerX" secondItem="n2i-Yt-MQC" secondAttribute="centerX" id="paC-jj-1Ak"/>
+                            <constraint firstItem="S5Z-2E-9c0" firstAttribute="top" secondItem="j53-Wv-y1O" secondAttribute="bottom" constant="36" id="sBf-0K-vBg"/>
+                            <constraint firstItem="j53-Wv-y1O" firstAttribute="top" secondItem="7BB-bM-prp" secondAttribute="bottom" constant="186" id="uFM-x6-UU2"/>
+                            <constraint firstItem="gH7-1S-VUU" firstAttribute="centerX" secondItem="j53-Wv-y1O" secondAttribute="centerX" id="yFl-yp-RTA"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Work Space" id="Y2u-gG-21z"/>
                     <connections>
                         <outlet property="PauseResumeButton" destination="4yW-2W-HJ0" id="SUr-35-wTw"/>
-                        <outlet property="StartStopButton" destination="S5Z-2E-9c0" id="epR-3H-hmc"/>
                         <outlet property="StudyPatternImageView" destination="j53-Wv-y1O" id="XRW-ZQ-bmv"/>
                         <outlet property="TimeLabel" destination="gH7-1S-VUU" id="Q1k-sY-6He"/>
+                        <outlet property="startButton" destination="S5Z-2E-9c0" id="f8k-v5-kbi"/>
+                        <outlet property="stopButton" destination="kVc-hw-lJI" id="3SD-Jg-KuB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtp-NG-GfR" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -10,21 +10,27 @@ import UIKit
 
 class WorkViewController: UIViewController {
     var timer: NSTimer!
-    var components: NSDateComponents = NSDateComponents()
-    var dateFormatter: NSDateFormatter = NSDateFormatter()
     var calendar: NSCalendar = NSCalendar.autoupdatingCurrentCalendar()
+    var dateFormatter = NSDateFormatter()
+    var timeComponents = NSDateComponents()
     @IBOutlet weak var TimeLabel: UILabel!
     @IBOutlet weak var StudyPatternImageView: UIImageView!
     
     @IBOutlet weak var PauseResumeButton: UIButton!
-    @IBOutlet weak var StartStopButton: UIButton!
+    
+    @IBOutlet weak var stopButton: UIButton!
+    @IBOutlet weak var startButton: UIButton!
+    var time: Int!
     override func viewDidLoad() {
         super.viewDidLoad()
-        dateFormatter.
-        dateFormatter.dateFormat = "hh:mm:ss"
-        components.second = 0
-        components.hour = 0
-        components.minute = 0
+        time = 0
+        stopButton.hidden = true
+        dateFormatter.dateFormat = "HH:mm:ss"
+        timeComponents.second = 0
+        timeComponents.minute = 0
+        timeComponents.hour = 0
+        timeComponents.nanosecond = 0
+
         
         // Do any additional setup after loading the view.
     }
@@ -34,22 +40,23 @@ class WorkViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func StartStopButton(sender: UIButton) {
-        switch(sender.titleLabel!.text!){
-        case "Start":
-            StartStopButton.titleLabel!.text = "Stop"
-            startTimer()
-        case "Stop":
-            StartStopButton.titleLabel!.text = "Start"
-            stopTimer()
-        default: break
-            
-        }
+   
+    @IBAction func Start(sender: AnyObject) {
+        startTimer()
+        startButton.hidden = true
+        stopButton.hidden = false
     }
+    @IBAction func Stop(sender: AnyObject) {
+        stopTimer()
+        startButton.hidden = false
+        stopButton.hidden = true
+    }
+    
     @IBAction func PauseButtonPressed(sender: UIButton) {
     }
     func startTimer(){
-        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
+                   timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
+        
     }
     func pauseTimer(){
         invalidateTimer()
@@ -58,9 +65,7 @@ class WorkViewController: UIViewController {
     func stopTimer(){
         invalidateTimer()
         TimeLabel.text = "00:00:00"
-        components.second = 0
-        components.minute = 0
-        components.hour = 0
+       
        
     }
     func invalidateTimer(){
@@ -69,11 +74,10 @@ class WorkViewController: UIViewController {
         }
     }
     func updateTime(){
-        components.second++
-        let a = calendar.dateFromComponents(components)
-        TimeLabel.text = dateFormatter.stringFromDate(a!)
-        //print(dateFormatter.stringFromDate(calendar.dateFromComponents(components)!))
-    }
+                timeComponents.second++
+        let date = (calendar.dateFromComponents(timeComponents))
+        TimeLabel.text = dateFormatter.stringFromDate(date!)
+}
     
 
     /*
@@ -87,3 +91,4 @@ class WorkViewController: UIViewController {
     */
 
 }
+
