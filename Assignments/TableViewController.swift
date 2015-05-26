@@ -12,8 +12,7 @@ class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let course = Course(courseName: "None", courseNumber: nil) // this is basically for independant assignments
-        CourseList.List.list.append(course)
+        CourseList.List.unArchiving()
         
         // Do any additional setup after loading the view, typically from a nib.
 //        self.navigationItem.leftBarButtonItem = self.editButtonItem()
@@ -94,6 +93,7 @@ class TableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         tableView.reloadData()
+        CourseList.List.save()
     }
     
     // Override to support conditional editing of the table view.

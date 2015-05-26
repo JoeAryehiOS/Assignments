@@ -9,7 +9,7 @@
 import Foundation
 
 
-class Course{
+class Course: NSObject, NSCoding{
     
     var courseName: String
     var courseNumber: Int?
@@ -20,5 +20,27 @@ class Course{
         courseName = name
         courseNumber = number
     }
+    required convenience init(coder decoder: NSCoder) {
+        let Name = decoder.decodeObjectForKey("courseName") as! String
+        let Number = decoder.decodeObjectForKey("courseNumber") as! Int?
+        self.init(courseName: Name, courseNumber: Number)
+        self.Assignments = decoder.decodeObjectForKey("Assignments") as! [Assignment]
+        self.current = decoder.decodeObjectForKey("current") as! Int
+        //self.title = decoder.decodeObjectForKey("title") as String?
+        
+        
+        
+    }
+    
+    func encodeWithCoder(coder: NSCoder) {
+        // coder.encodeObject(self.title, forKey: "title")
+        coder.encodeObject(self.courseName, forKey: "courseName")
+        coder.encodeObject(self.Assignments, forKey: "Assignments")
+        coder.encodeObject(self.courseNumber, forKey: "courseNumber")
+        coder.encodeObject(self.current, forKey: "current")
+     
+        
+    }
+
     
 }

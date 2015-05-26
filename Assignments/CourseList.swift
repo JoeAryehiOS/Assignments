@@ -41,18 +41,19 @@ class CourseList{
             }
         }
     }
-    /*
+    
     func save(){
         var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        var path = paths[0].stringByAppendingPathComponent("colonies")
-        NSKeyedArchiver.archiveRootObject(colonyList, toFile: path)
+        var path = paths[0].stringByAppendingPathComponent("courses")
+        NSKeyedArchiver.archiveRootObject(list, toFile: path)
         
     }
     func unArchiving(){
         var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)
-        var path = paths[0].stringByAppendingPathComponent("colonies")
-        if let archived = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? [Colony]{
-            colonyList = archived
+        var path = paths[0].stringByAppendingPathComponent("courses")
+        if let archived = NSKeyedUnarchiver.unarchiveObjectWithFile(path) as? [Course]{
+            list = archived
             
-        }*/
+        }
+    }
 }
