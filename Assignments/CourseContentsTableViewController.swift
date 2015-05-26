@@ -1,5 +1,5 @@
 //
-//  CourseListTableViewController.swift
+//  CourseContentsTableViewController.swift
 //  Assignments
 //
 //  Created by Aryeh Lieberman on 5/26/15.
@@ -8,12 +8,12 @@
 
 import UIKit
 
-class CourseListTableViewController: UITableViewController {
-
+class CourseContentsTableViewController: UITableViewController {
+    var course: Course!
     override func viewDidLoad() {
         super.viewDidLoad()
-         CourseList.List.unArchiving()
-        
+        course = CourseList.List.list[CourseList.List.current]
+        self.navigationController?.title = course.courseName
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -21,12 +21,6 @@ class CourseListTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    @IBAction func Add(sender: AnyObject) {
-        self.performSegueWithIdentifier("ShowCourse", sender: self)
-    }
-    override func viewWillAppear(animated: Bool) {
-        self.tableView.reloadData()
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -43,25 +37,24 @@ class CourseListTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        
-        
-        return CourseList.List.list.count
-        
+        return course.Assignments.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-        cell.textLabel?.text = CourseList.List.list[indexPath.row].courseName
-        if(CourseList.List.list[indexPath.row].courseNumber != nil){
-        cell.detailTextLabel?.text = "\(CourseList.List.list[indexPath.row].courseNumber!)"
-        }else{
-            cell.detailTextLabel?.hidden = true
-        }
-        // Configure the cell...
 
+        // Configure the cell...
+        cell.textLabel?.text = course.Assignments[indexPath.row].assignmentName
+        let detail = course.Assignments[indexPath.row].detail!
+        let date = course.Assignments[indexPath.row].dueDate!
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "MM/dd/yy"
+        dateFormatter.timeZone = NSTimeZone.localTimeZone()
+        
+        cell.detailTextLabel?.text = "\(dateFormatter.stringFromDate(date))   \(detail)"
         return cell
-    }
+    }   
     
 
     /*
@@ -99,19 +92,14 @@ class CourseListTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
-        if(segue.identifier == "ShowAssignmentsInCourse"){
-            let a = self.tableView.indexPathForSelectedRow()!
-            CourseList.List.current = a.row
-            
-                    }
     }
-    
+    */
 
 }
