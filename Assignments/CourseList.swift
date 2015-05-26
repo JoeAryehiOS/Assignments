@@ -17,7 +17,7 @@ class CourseList{
     }
     var list: [Course] = Array()
     var current: Int = 0
-    func addCourse(name: String, number: Int?){
+    func addCourse(name: String, number: String?){
         list.append(Course(courseName: name, courseNumber: number))
         
     }
@@ -32,10 +32,10 @@ class CourseList{
         
     }
     
-    func deleteCoursewith(CourseNumber: Int){
+    func deleteCoursewithNumber(CourseNumber: String){
         for i in enumerate(list){
             if let a = i.element.courseNumber{
-                if(a == CourseNumber){
+                if(CourseNumber == a){
                     list.removeAtIndex(i.index)
                 }
             }

@@ -12,10 +12,11 @@ class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         CourseList.List.unArchiving()
         
         // Do any additional setup after loading the view, typically from a nib.
-//        self.navigationItem.leftBarButtonItem = self.editButtonItem()
+      self.navigationItem.leftBarButtonItem = self.editButtonItem()
 //        
 //        let addButton = UIBarButtonItem(barButtonSystemItem: .Add, target: self, action: "insertNewObject")
 //        self.navigationItem.rightBarButtonItem = addButton
@@ -34,18 +35,14 @@ class TableViewController: UITableViewController {
     }
     @IBAction func Add(sender: AnyObject) {
         let alert = UIAlertController(title: "Add", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-        let courseAction = UIAlertAction(title: "Course", style: UIAlertActionStyle.Default){
-            action in
-           self.performSegueWithIdentifier("Course", sender: self)
-            
-        }
+        
         let assignmentAction = UIAlertAction(title: "Assignment", style: UIAlertActionStyle.Default){
             action in
             self.performSegueWithIdentifier("Assignment", sender: self)
             
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
-        alert.addAction(courseAction)
+       
         alert.addAction(assignmentAction)
         alert.addAction(cancelAction)
         presentViewController(alert, animated: true, completion: nil)
@@ -71,8 +68,11 @@ class TableViewController: UITableViewController {
         return CourseList.List.list[section].Assignments.count
     }
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        return CourseList.List.list[section].courseName
+        if(!CourseList.List.list[section].Assignments.isEmpty){
+            return CourseList.List.list[section].courseName}
+        else{
+            return nil
+        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -88,6 +88,7 @@ class TableViewController: UITableViewController {
         dateFormatter.timeZone = NSTimeZone.localTimeZone()
 
         cell.detailTextLabel?.text = "\(dateFormatter.stringFromDate(date))   \(detail)"
+        
         return cell
     }
     
@@ -96,12 +97,46 @@ class TableViewController: UITableViewController {
         CourseList.List.save()
     }
     
-    // Override to support conditional editing of the table view.
-    /*override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return NO if you do not want the specified item to be editable.
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
         return true
-    }*/
+    }
     
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == .Delete {
+            CourseList.List.list[indexPath.section].Assignments.removeAtIndex(indexPath.row)
+            if(CourseList.List.list[indexPath.section].Assignments.isEmpty){
+                editCourse(indexPath.section)
+            }
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            CourseList.List.save()
+        } else if editingStyle == .Insert {
+            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+        }
+    }
+    override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String! {
+        return "Banana"
+    }
+   
+    
+    func editCourse(CourseIndex: Int){
+        let alert = UIAlertController(title: "Edit Course", message: "Do you want to delete the course: \(CourseList.List.list[CourseIndex].courseName)", preferredStyle: UIAlertControllerStyle.Alert)
+        let Delete = UIAlertAction(title: "Delete", style: UIAlertActionStyle.Default){
+            action in
+            CourseList.List.list.removeAtIndex(CourseIndex)
+            self.tableView.reloadData()
+            
+        }
+        let Keep = UIAlertAction(title: "Keep", style: UIAlertActionStyle.Default){
+            action in
+            
+        }
+        
+        alert.addAction(Delete)
+        alert.addAction(Keep)
+        presentViewController(alert, animated: true, completion: nil)
+
+    }
     
     
     // Override to support editing the table view.

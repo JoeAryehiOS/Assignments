@@ -12,17 +12,17 @@ import Foundation
 class Course: NSObject, NSCoding{
     
     var courseName: String
-    var courseNumber: Int?
+    var courseNumber: String?
     var Assignments: [Assignment] = []
     var current: Int = 0
     //TODO MAKE THIS USEFUL
-    init(courseName name: String, courseNumber number: Int?){
+    init(courseName name: String, courseNumber number: String?){
         courseName = name
         courseNumber = number
     }
     required convenience init(coder decoder: NSCoder) {
         let Name = decoder.decodeObjectForKey("courseName") as! String
-        let Number = decoder.decodeObjectForKey("courseNumber") as! Int?
+        let Number = decoder.decodeObjectForKey("courseNumber") as! String?
         self.init(courseName: Name, courseNumber: Number)
         self.Assignments = decoder.decodeObjectForKey("Assignments") as! [Assignment]
         self.current = decoder.decodeObjectForKey("current") as! Int

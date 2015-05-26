@@ -24,7 +24,7 @@ class CourseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     @IBAction func Add(sender: AnyObject) {
-        let course = Course(courseName: CourseNameField.text, courseNumber: CourseNumberField.text.toInt())
+        let course = Course(courseName: CourseNameField.text, courseNumber: CourseNumberField.text)
         CourseList.List.list.append(course)
         
         
