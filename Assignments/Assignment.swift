@@ -20,6 +20,7 @@ class Assignment:NSObject, NSCoding {
     
     
     
+    
     init(assignmentName name: String, dueDate due: NSDate, timeToComplete time: Double, Details: String?){
         assignmentName = name
         timeToComplete = time
@@ -76,6 +77,26 @@ class Assignment:NSObject, NSCoding {
         coder.encodeObject(self.timeSpent, forKey: "timeSpent")
         coder.encodeObject(self.timeToComplete, forKey: "timeToComplete")
         
+        
+    }
+    
+    
+    //TODO MOVE THIS
+    
+    var workTime = timeForWork.ten
+    var breakTime = timeForBreakWithWorkTime.ten
+    
+    enum timeForWork : Int{
+        case ten = 600000
+        case fifteen = 900000
+        case twenty = 1200000
+        case thirty = 1800000
+    }
+    enum timeForBreakWithWorkTime : Int{
+        case ten = 200000
+        case fifteen = 300000
+        case twenty = 400000
+        case thirty = 600000
         
     }
 
