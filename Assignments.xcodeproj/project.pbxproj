@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C879E9001AA77924002B61D1 /* Assignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C879E8FF1AA77924002B61D1 /* Assignment.swift */; };
 		C8A7FD471AA8A9EE0046E9AD /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8A7FD461AA8A9ED0046E9AD /* Course.swift */; };
+		C8E6319B1B17694000D62F91 /* AssignmentTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E6319A1B17694000D62F91 /* AssignmentTimer.swift */; };
 		DD2794621B0A1B8A0063E16C /* StudyPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2794611B0A1B8A0063E16C /* StudyPatternView.swift */; };
 		DD2794641B0A1BC30063E16C /* StudyPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2794631B0A1BC30063E16C /* StudyPattern.swift */; };
 		DD4D209C1AABAB8D005E722C /* CourseList.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4D209B1AABAB8D005E722C /* CourseList.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		C879E8FF1AA77924002B61D1 /* Assignment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assignment.swift; sourceTree = "<group>"; };
 		C8A7FD461AA8A9ED0046E9AD /* Course.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
+		C8E6319A1B17694000D62F91 /* AssignmentTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentTimer.swift; sourceTree = "<group>"; };
 		DD2794611B0A1B8A0063E16C /* StudyPatternView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyPatternView.swift; sourceTree = "<group>"; };
 		DD2794631B0A1BC30063E16C /* StudyPattern.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudyPattern.swift; sourceTree = "<group>"; };
 		DD4D209B1AABAB8D005E722C /* CourseList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CourseList.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				DD81BA3F1A9E60F300F04B40 /* Images.xcassets */,
 				DD81BA411A9E60F400F04B40 /* LaunchScreen.xib */,
 				C879E8FF1AA77924002B61D1 /* Assignment.swift */,
+				C8E6319A1B17694000D62F91 /* AssignmentTimer.swift */,
 				C8A7FD461AA8A9ED0046E9AD /* Course.swift */,
 				DD81BA341A9E60F200F04B40 /* Supporting Files */,
 				DD4D209B1AABAB8D005E722C /* CourseList.swift */,
@@ -259,6 +262,7 @@
 				DDDAB5171AB0698000467593 /* AssignmentDetailViewController.swift in Sources */,
 				DDC88AEE1AABC87D00DE36A1 /* TestViewController.swift in Sources */,
 				C879E9001AA77924002B61D1 /* Assignment.swift in Sources */,
+				C8E6319B1B17694000D62F91 /* AssignmentTimer.swift in Sources */,
 				DD8195511AF2014F00C1732A /* CourseViewController.swift in Sources */,
 				DD81BA3B1A9E60F300F04B40 /* SecondViewController.swift in Sources */,
 				DDD6C40A1B0CDD6A00F5C869 /* WorkViewController.swift in Sources */,
