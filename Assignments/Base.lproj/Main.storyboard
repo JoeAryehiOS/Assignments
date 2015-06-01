@@ -276,7 +276,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="9L5-xl-Vme" kind="show" identifier="showAssignment" id="wcs-6H-Yz5"/>
+                                    <segue destination="9L5-xl-Vme" kind="show" identifier="ShowAssignment" id="Lhe-ZJ-zcX"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

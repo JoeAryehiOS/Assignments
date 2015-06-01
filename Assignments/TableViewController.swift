@@ -34,6 +34,7 @@ class TableViewController: UITableViewController {
         
     
     }
+    
     @IBAction func Add(sender: AnyObject) {
         let alert = UIAlertController(title: "Add", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
@@ -42,7 +43,7 @@ class TableViewController: UITableViewController {
             self.performSegueWithIdentifier("Assignment", sender: self)
             
         }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+                let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
        
         alert.addAction(assignmentAction)
         alert.addAction(cancelAction)
@@ -53,7 +54,7 @@ class TableViewController: UITableViewController {
     @IBAction func ACSwitch(sender: AnyObject) {
         switch(ACSwitch.selectedSegmentIndex){
         case 0: break
-        case 1: self.performSegueWithIdentifier("toCourse", sender: self)
+        case 1: self.tableView.reloadData()
         default: break
         }
     }
@@ -67,23 +68,35 @@ class TableViewController: UITableViewController {
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return CourseList.List.list.count
+        if(ACSwitch.selectedSegmentIndex == 0){
+            return CourseList.List.list.count}
+        else{
+            return 1
+        }
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return CourseList.List.list[section].Assignments.count
+        if(ACSwitch.selectedSegmentIndex == 0){
+            return CourseList.List.list[section].Assignments.count}
+        else{
+            return CourseList.List.list.count
+        }
     }
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if(ACSwitch.selectedSegmentIndex == 0){
         if(!CourseList.List.list[section].Assignments.isEmpty){
             return CourseList.List.list[section].courseName}
         else{
+            return nil
+            }}else{
             return nil
         }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        if(ACSwitch.selectedSegmentIndex == 0){
         let cell = tableView.dequeueReusableCellWithIdentifier("Reuse Identifier", forIndexPath: indexPath) as! UITableViewCell
 
         
@@ -98,6 +111,18 @@ class TableViewController: UITableViewController {
         cell.detailTextLabel?.text = "\(dateFormatter.stringFromDate(date))   \(detail)"
         
         return cell
+        }else{
+            let cell = tableView.dequeueReusableCellWithIdentifier("Reuse Identifier", forIndexPath: indexPath) as! UITableViewCell
+            cell.textLabel?.text = CourseList.List.list[indexPath.row].courseName
+            if(CourseList.List.list[indexPath.row].courseNumber != nil){
+                cell.detailTextLabel?.text = "\(CourseList.List.list[indexPath.row].courseNumber!)"
+            }else{
+                cell.detailTextLabel?.hidden = true
+            }
+            // Configure the cell...
+            
+            return cell
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -111,6 +136,7 @@ class TableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if(ACSwitch.selectedSegmentIndex == 0){
         if editingStyle == .Delete {
             CourseList.List.list[indexPath.section].Assignments.removeAtIndex(indexPath.row)
             if(CourseList.List.list[indexPath.section].Assignments.isEmpty){
@@ -120,6 +146,18 @@ class TableViewController: UITableViewController {
             CourseList.List.save()
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+            }}
+        else{
+            
+            if editingStyle == .Delete {
+                CourseList.List.list.removeAtIndex(indexPath.row)
+                
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+                CourseList.List.save()
+            } else if editingStyle == .Insert {
+                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+            }
+            
         }
     }
     override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String! {
