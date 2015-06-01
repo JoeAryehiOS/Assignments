@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -138,23 +138,6 @@
             </objects>
             <point key="canvasLocation" x="990" y="-194"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="QXI-lB-sG7">
-            <objects>
-                <navigationController id="DNH-Q6-380" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="76l-a1-QQG"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="R4D-eh-LSo">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="fij-4t-Nxy" kind="relationship" relationship="rootViewController" id="Nki-AJ-cil"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Shg-Lg-fJj" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="701" y="455"/>
-        </scene>
         <!--Courses-->
         <scene sceneID="qoM-m7-JyD">
             <objects>
@@ -195,6 +178,19 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Courses" id="39q-E8-5cy"/>
                     <navigationItem key="navigationItem" id="HjN-I6-27c">
+                        <nil key="title"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="ox4-cT-ngL"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="PfR-kV-hfv">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Assignments"/>
+                                <segment title="Courses"/>
+                            </segments>
+                            <connections>
+                                <action selector="ACSwitch:" destination="fij-4t-Nxy" eventType="valueChanged" id="myY-7D-bgx"/>
+                            </connections>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="EE8-9Q-lDd">
                             <connections>
                                 <action selector="Add:" destination="fij-4t-Nxy" id="9Bb-VJ-HVf"/>
@@ -202,12 +198,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ACSwitch" destination="PfR-kV-hfv" id="ggZ-0Z-J6f"/>
                         <segue destination="SkM-X5-BEC" kind="presentation" identifier="ShowCourse" id="aft-nh-eIY"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4d2-iQ-Lgz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1374" y="484"/>
+            <point key="canvasLocation" x="1733" y="-1580"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="IUm-Ng-mdd">
@@ -248,7 +245,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N00-HI-Zxl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2139" y="484"/>
+            <point key="canvasLocation" x="1728" y="-2249"/>
         </scene>
         <!--Item-->
         <scene sceneID="GdX-Bs-PCB">
@@ -290,6 +287,18 @@
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="Mjj-I4-Pch"/>
                     <navigationItem key="navigationItem" id="pBY-yV-I6r">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="zEO-y8-5kj">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Assignments"/>
+                                <segment title="Courses"/>
+                            </segments>
+                            <connections>
+                                <action selector="ACSwitch:" destination="3Ka-ud-WzA" eventType="valueChanged" id="23V-97-TbJ"/>
+                            </connections>
+                        </segmentedControl>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="YZw-er-Y6y">
                             <connections>
                                 <action selector="Add:" destination="3Ka-ud-WzA" id="knR-TK-cdq"/>
@@ -297,6 +306,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="ACSwitch" destination="zEO-y8-5kj" id="Q35-uf-K2i"/>
                         <segue destination="VGY-6a-8Lg" kind="popoverPresentation" identifier="Assignment" popoverAnchorView="DBy-iZ-Hhz" id="gvP-do-20f">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                             <popoverPassthroughViews>
@@ -313,7 +323,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDa-AK-087" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1733" y="-920"/>
+            <point key="canvasLocation" x="1624" y="-719"/>
         </scene>
         <!--Title-->
         <scene sceneID="98h-gY-iv6">
@@ -796,7 +806,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Osv-5I-Ntb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2466" y="-1664"/>
+            <point key="canvasLocation" x="2392" y="-1609"/>
         </scene>
         <!--Course View Controller-->
         <scene sceneID="n9z-dT-kcg">
@@ -898,7 +908,6 @@
                         <segue destination="qiV-XD-i8r" kind="relationship" relationship="viewControllers" id="INM-bn-6yT"/>
                         <segue destination="E6Y-4W-K7o" kind="relationship" relationship="viewControllers" id="cRz-fP-PtK"/>
                         <segue destination="VBR-xU-jNM" kind="relationship" relationship="viewControllers" id="R5f-Yi-vvq"/>
-                        <segue destination="DNH-Q6-380" kind="relationship" relationship="viewControllers" id="jKg-8a-IbA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -975,6 +984,6 @@
         <image name="first" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aft-nh-eIY"/>
+        <segue reference="WMh-Bs-E7C"/>
     </inferredMetricsTieBreakers>
 </document>

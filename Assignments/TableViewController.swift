@@ -10,6 +10,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
+    @IBOutlet weak var ACSwitch: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,6 +50,13 @@ class TableViewController: UITableViewController {
     }
     
    
+    @IBAction func ACSwitch(sender: AnyObject) {
+        switch(ACSwitch.selectedSegmentIndex){
+        case 0: break
+        case 1: self.performSegueWithIdentifier("toCourse", sender: self)
+        default: break
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

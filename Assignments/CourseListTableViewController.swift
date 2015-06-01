@@ -10,6 +10,7 @@ import UIKit
 
 class CourseListTableViewController: UITableViewController {
 
+    @IBOutlet weak var ACSwitch: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
          CourseList.List.unArchiving()
@@ -31,6 +32,17 @@ class CourseListTableViewController: UITableViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func ACSwitch(sender: AnyObject) {
+        switch(ACSwitch.selectedSegmentIndex){
+        case 0: dismissViewControllerAnimated(true){
+            action in
+            
+            }
+        case 1: break
+        default: break
+        }
+    }
 
     // MARK: - Table view data source
 
@@ -48,7 +60,7 @@ class CourseListTableViewController: UITableViewController {
         return CourseList.List.list.count
         
     }
-
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
