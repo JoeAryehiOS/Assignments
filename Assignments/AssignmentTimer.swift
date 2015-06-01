@@ -10,9 +10,17 @@ import Foundation
 
 class AssignmentTimer {
     
-    private var workTime = 600000
-
+    private var workTime = 600
+    private var selectedAssignment:Assignment!
     
+    func runOneWorkPeriod(){
+        var time:NSTimer = NSTimer(timeInterval: NSTimeInterval(workTime), invocation: finishWorkTime(), repeats: false)
+    }
+    
+    func finishWorkTime(){
+        selectedAssignment.timeSpent+=Double(workTime/60)
+        
+    }
     func getTimeForWork() -> Int{
         return workTime
     }
@@ -24,13 +32,13 @@ class AssignmentTimer {
     func setWorkTime(newVal:Int){
         switch newVal{
         case 10:
-            workTime = 600000
+            workTime = 600
         case 15:
-            workTime = 900000
+            workTime = 900
         case 20:
-            workTime = 1200000
+            workTime = 1200
         case 30:
-            workTime = 1800000
+            workTime = 1800
         default:
             print("ERROR IN SETTING WORK TIME")
         }
