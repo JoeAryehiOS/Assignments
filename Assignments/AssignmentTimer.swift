@@ -7,25 +7,34 @@
 //
 
 import Foundation
+import UIKit
 
 class AssignmentTimer {
     
-    private var workTime = 600
+    private var workTime = 600.0
     private var selectedAssignment:Assignment!
     
+    
     func runOneWorkPeriod(){
-        var time:NSTimer = NSTimer(timeInterval: NSTimeInterval(workTime), invocation: finishWorkTime(), repeats: false)
+        var time:NSTimer = NSTimer.scheduledTimerWithTimeInterval(workTime, target: self, selector: Selector("finishWorkTime"), userInfo: nil, repeats: false)
     }
     
     func finishWorkTime(){
-        selectedAssignment.timeSpent+=Double(workTime/60)
-        
+        selectedAssignment.timeSpent+=workTime/60
+        if(selectedAssignment.checkCompletion()){
+            var notDone = UIAlertController()
+            notDone.addAction(UIAlertAction(title:"OK", style: .Default, handler:  {selectedAssignment.increaseTime(workTime)}, sender: self)
+        var alert = UIAlertView()
+        alert.title = "Done Working"
+        alert.message = "Time for a break"
+        alert.addButtonWithTitle("YAY!")
+        alert.show()
     }
-    func getTimeForWork() -> Int{
+    func getTimeForWork() -> Double{
         return workTime
     }
     
-    func getTimeForBreak() ->Int{
+    func getTimeForBreak() ->Double{
         return workTime/3
     }
     

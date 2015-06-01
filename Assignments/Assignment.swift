@@ -19,7 +19,9 @@ class Assignment:NSObject, NSCoding {
     var detail: String?
     
     
-    
+    func increaseTime(d:Double) {
+        timeToComplete+=d
+    }
     
     init(assignmentName name: String, dueDate due: NSDate, timeToComplete time: Double, Details: String?){
         assignmentName = name
