@@ -16,7 +16,11 @@ class AssignmentTimer {
     
     
     func runOneWorkPeriod(){
+<<<<<<< HEAD
         var time:NSTimer = NSTimer.scheduledTimerWithTimeInterval(workTime, target: self, selector: Selector("finishWorkTime"), userInfo: nil, repeats: false)
+=======
+        //var time:NSTimer = NSTimer.scheduledTimerWithTimeInterval( workTime, target: self, selector: Selector("finishWorkTime"), userInfo: nil, repeats: false)   
+>>>>>>> origin/master
     }
     
     func finishWorkTime(){
