@@ -16,18 +16,26 @@ class AssignmentTimer {
     
     
     func runOneWorkPeriod(){
-<<<<<<< HEAD
         var time:NSTimer = NSTimer.scheduledTimerWithTimeInterval(workTime, target: self, selector: Selector("finishWorkTime"), userInfo: nil, repeats: false)
-=======
-        //var time:NSTimer = NSTimer.scheduledTimerWithTimeInterval( workTime, target: self, selector: Selector("finishWorkTime"), userInfo: nil, repeats: false)   
->>>>>>> origin/master
+        //var time:NSTimer = NSTimer.scheduledTimerWithTimeInterval( workTime, target: self, selector: Selector("finishWorkTime"), userInfo: nil, repeats: false)
     }
     
     func finishWorkTime(){
         selectedAssignment.timeSpent+=workTime/60
         if(selectedAssignment.checkCompletion()){
-            var notDone = UIAlertController()
-            notDone.addAction(UIAlertAction(title:"OK", style: .Default, handler:  {selectedAssignment.increaseTime(workTime)}, sender: self)
+            let doneController: UIAlertController = UIAlertController(title: "Are You finished?", message: "Select the appropriate option", preferredStyle: .ActionSheet)
+            
+            //Create and add the Cancel action
+            let cancelAction: UIAlertAction = UIAlertAction(title: "Yes", style: .Cancel) { action -> Void in
+                //Just dismiss the action sheet
+            }
+           doneController.addAction(cancelAction)
+            //Create and add first option action
+            let takePictureAction: UIAlertAction = UIAlertAction(title: "No", style: .Default) { action -> Void in
+                self.selectedAssignment.increaseTime(self.workTime/60)
+            }
+            doneController.addAction(takePictureAction)
+        }
         var alert = UIAlertView()
         alert.title = "Done Working"
         alert.message = "Time for a break"
@@ -36,6 +44,10 @@ class AssignmentTimer {
     }
     func getTimeForWork() -> Double{
         return workTime
+    }
+    
+    init(a:Assignment){
+        selectedAssignment = a
     }
     
     func getTimeForBreak() ->Double{
