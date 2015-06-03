@@ -116,7 +116,6 @@
 				DD81BA411A9E60F400F04B40 /* LaunchScreen.xib */,
 				C8E6319A1B17694000D62F91 /* AssignmentTimer.swift */,
 				C8A7FD461AA8A9ED0046E9AD /* Course.swift */,
-				DD81BA341A9E60F200F04B40 /* Supporting Files */,
 				DD4D209B1AABAB8D005E722C /* CourseList.swift */,
 				DDC88AED1AABC87D00DE36A1 /* TestViewController.swift */,
 				DDDAB5141AADEE5800467593 /* TableViewController.swift */,
@@ -129,6 +128,7 @@
 				DDD6C4091B0CDD6A00F5C869 /* WorkViewController.swift */,
 				DDE577B81B14A880001EFB73 /* CourseListTableViewController.swift */,
 				DDE577BA1B14D653001EFB73 /* CourseContentsTableViewController.swift */,
+				DD81BA341A9E60F200F04B40 /* Supporting Files */,
 			);
 			path = Assignments;
 			sourceTree = "<group>";

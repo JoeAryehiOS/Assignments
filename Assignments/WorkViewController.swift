@@ -10,9 +10,7 @@ import UIKit
 
 class WorkViewController: UIViewController {
     var timer: NSTimer!
-    var calendar: NSCalendar = NSCalendar.autoupdatingCurrentCalendar()
-    var dateFormatter = NSDateFormatter()
-    var timeComponents = NSDateComponents()
+    
     @IBOutlet weak var TimeLabel: UILabel!
     @IBOutlet weak var StudyPatternImageView: UIImageView!
     
@@ -26,11 +24,7 @@ class WorkViewController: UIViewController {
         time = 0
         stopButton.hidden = true
         
-        dateFormatter.dateFormat = "HH:mm:ss"
-        timeComponents.second = 0
-        timeComponents.minute = 0
-        timeComponents.hour = 0
-        timeComponents.nanosecond = 0
+       
 
         
         // Do any additional setup after loading the view.
@@ -65,9 +59,7 @@ class WorkViewController: UIViewController {
     }
     func stopTimer(){
         invalidateTimer()
-        timeComponents.second = 0
-        TimeLabel.text = "00:00:00"
-       
+        
        
     }
     func invalidateTimer(){
@@ -76,10 +68,7 @@ class WorkViewController: UIViewController {
         }
     }
     func updateTime(){
-                timeComponents.second++
-        let date = (calendar.dateFromComponents(timeComponents))
-        TimeLabel.text = dateFormatter.stringFromDate(date!)
-}
+                }
     
 
     /*
@@ -93,4 +82,9 @@ class WorkViewController: UIViewController {
     */
 
 }
+extension Int{
+    var second: Int{ return self}
+    var minute: Int{ return second / 60}
+    var hour: Int{ return minute / 60}
 
+}
