@@ -861,6 +861,67 @@
             </objects>
             <point key="canvasLocation" x="3175" y="-1664"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="g6M-bg-x4a">
+            <objects>
+                <viewController id="YDM-e9-Qjj" customClass="ACViewController" customModule="Assignments" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uzU-T6-5hI"/>
+                        <viewControllerLayoutGuide type="bottom" id="SgP-MO-LFA"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E7o-OX-hIQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7BC-9m-SH7">
+                                <rect key="frame" x="0.0" y="64" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="Uqj-zC-1Xs">
+                                <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xh9-SN-Ffh">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="cP9-Md-pgE">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Assignments"/>
+                                <segment title="Courses"/>
+                            </segments>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="ACSwitch" destination="cP9-Md-pgE" id="J9G-iw-fj3"/>
+                        <outlet property="AssignmentTableView" destination="7BC-9m-SH7" id="Vna-7i-nfB"/>
+                        <outlet property="CourseTableView" destination="Uqj-zC-1Xs" id="rOZ-dp-8PV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Naq-Z1-9PF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-82" y="-1371"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="6qd-sx-EwI">
+            <objects>
+                <navigationController id="Q6T-o9-Kvk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="XRH-BH-3Sa"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Fg-1c-4gO">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="YDM-e9-Qjj" kind="relationship" relationship="rootViewController" id="bnF-dU-dE7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XFk-Aq-cF9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="-678"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
@@ -877,6 +938,7 @@
                         <segue destination="qiV-XD-i8r" kind="relationship" relationship="viewControllers" id="INM-bn-6yT"/>
                         <segue destination="E6Y-4W-K7o" kind="relationship" relationship="viewControllers" id="cRz-fP-PtK"/>
                         <segue destination="VBR-xU-jNM" kind="relationship" relationship="viewControllers" id="R5f-Yi-vvq"/>
+                        <segue destination="Q6T-o9-Kvk" kind="relationship" relationship="viewControllers" id="Vn4-Nr-018"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
