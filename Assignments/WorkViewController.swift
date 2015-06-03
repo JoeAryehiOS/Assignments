@@ -25,6 +25,7 @@ class WorkViewController: UIViewController {
         super.viewDidLoad()
         time = 0
         stopButton.hidden = true
+        
         dateFormatter.dateFormat = "HH:mm:ss"
         timeComponents.second = 0
         timeComponents.minute = 0
@@ -64,6 +65,7 @@ class WorkViewController: UIViewController {
     }
     func stopTimer(){
         invalidateTimer()
+        timeComponents.second = 0
         TimeLabel.text = "00:00:00"
        
        
