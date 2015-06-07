@@ -11,8 +11,8 @@ import UIKit
 class ACViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     @IBOutlet weak var ACSwitch: UISegmentedControl!
-    @IBOutlet weak var CourseTableView: UITableView!
-    @IBOutlet weak var AssignmentTableView: UITableView!
+    
+    @IBOutlet weak var ACTableView: UITableView!
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -21,8 +21,14 @@ class ACViewController: UIViewController, UITableViewDataSource, UITableViewDele
     }
     */
     override func viewDidLoad() {
-        CourseTableView.hidden = true
+        ACTableView.reloadData()
+        CourseList.List.unArchiving()
+            }
+    
+    @IBAction func ACSwitchChanged(sender: AnyObject) {
+        ACTableView.reloadData()
     }
+    
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         if(ACSwitch.selectedSegmentIndex == 0){
             return CourseList.List.list.count
@@ -47,7 +53,35 @@ class ACViewController: UIViewController, UITableViewDataSource, UITableViewDele
         }
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        <#code#>
+        
+        if(ACSwitch.selectedSegmentIndex == 0){
+            let cell = tableView.dequeueReusableCellWithIdentifier("AssignmentIdentifier", forIndexPath: indexPath) as! UITableViewCell
+            
+            
+            
+            cell.textLabel?.text = CourseList.List.list[indexPath.section].Assignments[indexPath.row].assignmentName
+            let detail = CourseList.List.list[indexPath.section].Assignments[indexPath.row].detail!
+            let date = CourseList.List.list[indexPath.section].Assignments[indexPath.row].dueDate!
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "MM/dd/yy"
+            dateFormatter.timeZone = NSTimeZone.localTimeZone()
+            
+            cell.detailTextLabel?.text = "\(dateFormatter.stringFromDate(date))   \(detail)"
+            
+            return cell
+        }else{
+            let cell = tableView.dequeueReusableCellWithIdentifier("CourseIdentifier", forIndexPath: indexPath) as! UITableViewCell
+            cell.textLabel?.text = CourseList.List.list[indexPath.row].courseName
+            if(CourseList.List.list[indexPath.row].courseNumber != nil){
+                cell.detailTextLabel?.text = "\(CourseList.List.list[indexPath.row].courseNumber!)"
+            }else{
+                cell.detailTextLabel?.hidden = true
+            }
+            // Configure the cell...
+            
+            return cell
+        }
+
     }
     
     
