@@ -960,7 +960,7 @@
         <scene sceneID="6qd-sx-EwI">
             <objects>
                 <navigationController id="Q6T-o9-Kvk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="list" id="XRH-BH-3Sa"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="pencil" id="XRH-BH-3Sa"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Fg-1c-4gO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -1009,7 +1009,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settings-3" id="FQb-7P-wUn"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="pencil" id="FQb-7P-wUn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmE-SR-28L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1017,9 +1017,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="list" width="32" height="32"/>
         <image name="pencil" width="32" height="32"/>
-        <image name="settings-3" width="32" height="32"/>
         <image name="wiggle" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
