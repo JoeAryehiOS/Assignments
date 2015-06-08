@@ -11,7 +11,7 @@
         <scene sceneID="5Fo-TT-n7x">
             <objects>
                 <navigationController id="E6Y-4W-K7o" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Assignments" id="WST-f0-eXc"/>
+                    <tabBarItem key="tabBarItem" title="Assignments" image="wiggle" id="WST-f0-eXc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iux-SL-KIG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -94,7 +94,7 @@
                             <constraint firstItem="gH7-1S-VUU" firstAttribute="centerX" secondItem="j53-Wv-y1O" secondAttribute="centerX" id="yFl-yp-RTA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Work Space" id="Y2u-gG-21z"/>
+                    <tabBarItem key="tabBarItem" title="Work Space" image="pencil" id="Y2u-gG-21z"/>
                     <connections>
                         <outlet property="PauseResumeButton" destination="4yW-2W-HJ0" id="SUr-35-wTw"/>
                         <outlet property="StudyPatternImageView" destination="j53-Wv-y1O" id="XRW-ZQ-bmv"/>
@@ -960,7 +960,7 @@
         <scene sceneID="6qd-sx-EwI">
             <objects>
                 <navigationController id="Q6T-o9-Kvk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="XRH-BH-3Sa"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="list" id="XRH-BH-3Sa"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Fg-1c-4gO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -987,7 +987,6 @@
                     </tabBar>
                     <connections>
                         <segue destination="U5O-ue-Isu" kind="relationship" relationship="viewControllers" id="lIx-lW-uDE"/>
-                        <segue destination="qiV-XD-i8r" kind="relationship" relationship="viewControllers" id="INM-bn-6yT"/>
                         <segue destination="E6Y-4W-K7o" kind="relationship" relationship="viewControllers" id="cRz-fP-PtK"/>
                         <segue destination="VBR-xU-jNM" kind="relationship" relationship="viewControllers" id="R5f-Yi-vvq"/>
                         <segue destination="Q6T-o9-Kvk" kind="relationship" relationship="viewControllers" id="Vn4-Nr-018"/>
@@ -996,50 +995,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="0.0" y="0.0"/>
-        </scene>
-        <!--Tests-->
-        <scene sceneID="5jT-6J-NXp">
-            <objects>
-                <viewController id="qiV-XD-i8r" customClass="TestViewController" customModule="Assignments" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="1i5-Rs-Mdf"/>
-                        <viewControllerLayoutGuide type="bottom" id="ckT-EZ-GvR"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="JzN-pg-5VS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwA-51-hsd">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EXX-RJ-1Py">
-                                <rect key="frame" x="42" y="44" width="109" height="30"/>
-                                <state key="normal" title="TestAssignment">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="TestAssignment:" destination="qiV-XD-i8r" eventType="touchUpInside" id="afY-mc-gcf"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGc-uU-LfC">
-                                <rect key="frame" x="55" y="101" width="447" height="121"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Tests" id="aey-Wk-EQR"/>
-                    <connections>
-                        <outlet property="Assignmentlabel" destination="hGc-uU-LfC" id="OsF-It-0NI"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8mi-Wg-A5z" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="990" y="2008"/>
         </scene>
         <!--Settings-->
         <scene sceneID="1qg-AY-Klp">
@@ -1054,9 +1009,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="first" id="FQb-7P-wUn">
-                        <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settings-3" id="FQb-7P-wUn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmE-SR-28L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1064,7 +1017,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
+        <image name="list" width="32" height="32"/>
+        <image name="pencil" width="32" height="32"/>
+        <image name="settings-3" width="32" height="32"/>
+        <image name="wiggle" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WMh-Bs-E7C"/>
