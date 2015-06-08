@@ -10,10 +10,22 @@ import UIKit
 
 class CourseContentsTableViewController: UITableViewController {
     var course: Course!
+    
+    
+    @IBOutlet weak var CourseName: UITextField!
+    
+    @IBOutlet weak var CourseNumber: UITextField!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         course = CourseList.List.list[CourseList.List.current]
         self.navigationController?.title = course.courseName
+        CourseName.text = course.courseName
+        CourseNumber.text = course.courseNumber
+        CourseName.userInteractionEnabled = false
+        CourseNumber.userInteractionEnabled = false
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -26,35 +38,9 @@ class CourseContentsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 1
-    }
-
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete method implementation.
-        // Return the number of rows in the section.
-        return course.Assignments.count
-    }
-
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
-
-        // Configure the cell...
-        cell.textLabel?.text = course.Assignments[indexPath.row].assignmentName
-        let detail = course.Assignments[indexPath.row].detail!
-        let date = course.Assignments[indexPath.row].dueDate!
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "MM/dd/yy"
-        dateFormatter.timeZone = NSTimeZone.localTimeZone()
-        
-        cell.detailTextLabel?.text = "\(dateFormatter.stringFromDate(date))   \(detail)"
-        return cell
-    }   
+    
+    
     
 
     /*

@@ -55,7 +55,7 @@ class TableViewController: UITableViewController {
         if(ACSwitch.selectedSegmentIndex == 0){
             self.performSegueWithIdentifier("ShowAssignment", sender: self)
         }else{
-            
+            self.performSegueWithIdentifier("ShowCourse", sender: self)
         }
     }
     @IBAction func ACSwitch(sender: AnyObject) {
@@ -215,11 +215,21 @@ class TableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "showAssignment"){
+        switch (segue.identifier!){
+        case "ShowAssignment":
             let indexPath = self.tableView.indexPathForSelectedRow()!
             CourseList.List.current = indexPath.section
             CourseList.List.list[CourseList.List.current].current = indexPath.row
-                    }
+        case "ShowCourse":
+            let indexPath = self.tableView.indexPathForSelectedRow()!
+            CourseList.List.current = indexPath.section
+        default: break
+        }
+//        if(segue.identifier == "showAssignment"){
+//            let indexPath = self.tableView.indexPathForSelectedRow()!
+//            CourseList.List.current = indexPath.section
+//            CourseList.List.list[CourseList.List.current].current = indexPath.row
+//                    }
                           }
     
     
