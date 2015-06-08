@@ -11,10 +11,11 @@
         <scene sceneID="5Fo-TT-n7x">
             <objects>
                 <navigationController id="E6Y-4W-K7o" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Assignments" image="wiggle" id="WST-f0-eXc"/>
+                    <tabBarItem key="tabBarItem" title="Assignments" id="WST-f0-eXc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iux-SL-KIG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.54625490190000003" green="0.66513789700000003" blue="0.78998234710000004" alpha="0.77000000000000002" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="3Ka-ud-WzA" kind="relationship" relationship="rootViewController" id="idq-2e-Bdy"/>
@@ -78,6 +79,13 @@
                                     <action selector="Stop:" destination="VBR-xU-jNM" eventType="touchUpInside" id="Co8-TO-9lh"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ab8-fH-G4e">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <color key="barTintColor" red="0.54625490190000003" green="0.66513789700000003" blue="0.78998234710000004" alpha="0.77000000000000002" colorSpace="calibratedRGB"/>
+                                <items>
+                                    <navigationItem title="Work Space" id="7BD-55-Lzv"/>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -94,7 +102,7 @@
                             <constraint firstItem="gH7-1S-VUU" firstAttribute="centerX" secondItem="j53-Wv-y1O" secondAttribute="centerX" id="yFl-yp-RTA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Work Space" image="pencil" id="Y2u-gG-21z"/>
+                    <tabBarItem key="tabBarItem" title="Work Space" image="Work" id="Y2u-gG-21z"/>
                     <connections>
                         <outlet property="PauseResumeButton" destination="4yW-2W-HJ0" id="SUr-35-wTw"/>
                         <outlet property="StudyPatternImageView" destination="j53-Wv-y1O" id="XRW-ZQ-bmv"/>
@@ -960,11 +968,11 @@
         <scene sceneID="6qd-sx-EwI">
             <objects>
                 <navigationController id="Q6T-o9-Kvk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="pencil" id="XRH-BH-3Sa"/>
+                    <tabBarItem key="tabBarItem" title="Item" image="ACList" id="XRH-BH-3Sa"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Fg-1c-4gO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.54625490190000003" green="0.66513789700000003" blue="0.78998234710000004" alpha="0.77000000000000002" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="YDM-e9-Qjj" kind="relationship" relationship="rootViewController" id="bnF-dU-dE7"/>
@@ -983,7 +991,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="barTintColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.54625490194392246" green="0.66513789695647485" blue="0.78998234710550885" alpha="0.77000000000000002" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="U5O-ue-Isu" kind="relationship" relationship="viewControllers" id="lIx-lW-uDE"/>
@@ -1009,7 +1017,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="pencil" id="FQb-7P-wUn"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="FQb-7P-wUn"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cmE-SR-28L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1017,8 +1025,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="pencil" width="32" height="32"/>
-        <image name="wiggle" width="32" height="32"/>
+        <image name="ACList" width="16" height="16"/>
+        <image name="Settings" width="16" height="16"/>
+        <image name="Work" width="16" height="16"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WMh-Bs-E7C"/>
