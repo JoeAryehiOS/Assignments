@@ -23,6 +23,12 @@ class CourseViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func DidEndOnExit(sender: AnyObject) {
+        CourseNameField.resignFirstResponder()
+        CourseNumberField.resignFirstResponder()
+    }
+    
+    
     @IBAction func Add(sender: AnyObject) {
         let course = Course(courseName: CourseNameField.text, courseNumber: CourseNumberField.text)
         CourseList.List.list.append(course)

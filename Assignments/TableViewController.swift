@@ -10,6 +10,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
+    @IBOutlet var ACTable: UITableView!
     @IBOutlet weak var ACSwitch: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,13 +51,20 @@ class TableViewController: UITableViewController {
         presentViewController(alert, animated: true, completion: nil)
     }
     
-   
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if(ACSwitch.selectedSegmentIndex == 0){
+            self.performSegueWithIdentifier("ShowAssignment", sender: self)
+        }else{
+            
+        }
+    }
     @IBAction func ACSwitch(sender: AnyObject) {
         switch(ACSwitch.selectedSegmentIndex){
         case 0: break
         case 1: self.tableView.reloadData()
         default: break
         }
+        ACTable.reloadData()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

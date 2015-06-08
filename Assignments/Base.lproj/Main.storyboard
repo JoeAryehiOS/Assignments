@@ -15,7 +15,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iux-SL-KIG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.54625490190000003" green="0.66513789700000003" blue="0.78998234710000004" alpha="0.77000000000000002" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="3Ka-ud-WzA" kind="relationship" relationship="rootViewController" id="idq-2e-Bdy"/>
@@ -80,11 +79,8 @@
                                 </connections>
                             </button>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ab8-fH-G4e">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <color key="barTintColor" red="0.54625490190000003" green="0.66513789700000003" blue="0.78998234710000004" alpha="0.77000000000000002" colorSpace="calibratedRGB"/>
-                                <items>
-                                    <navigationItem title="Work Space" id="7BD-55-Lzv"/>
-                                </items>
                             </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -113,7 +109,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtp-NG-GfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="990" y="-194"/>
+            <point key="canvasLocation" x="990" y="-171"/>
         </scene>
         <!--Courses-->
         <scene sceneID="qoM-m7-JyD">
@@ -229,7 +225,7 @@
             <objects>
                 <tableViewController id="3Ka-ud-WzA" customClass="TableViewController" customModule="Assignments" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="DBy-iZ-Hhz">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -252,9 +248,6 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="9L5-xl-Vme" kind="show" identifier="ShowAssignment" id="Lhe-ZJ-zcX"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -284,6 +277,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ACSwitch" destination="zEO-y8-5kj" id="Q35-uf-K2i"/>
+                        <outlet property="ACTable" destination="DBy-iZ-Hhz" id="AVR-YA-Apv"/>
                         <segue destination="VGY-6a-8Lg" kind="popoverPresentation" identifier="Assignment" popoverAnchorView="DBy-iZ-Hhz" id="gvP-do-20f">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                             <popoverPassthroughViews>
@@ -296,6 +290,7 @@
                                 <tableView reference="DBy-iZ-Hhz"/>
                             </popoverPassthroughViews>
                         </segue>
+                        <segue destination="9L5-xl-Vme" kind="show" identifier="ShowAssignment" id="6h7-Um-1m7"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aDa-AK-087" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -307,7 +302,7 @@
             <objects>
                 <tableViewController id="9L5-xl-Vme" customClass="AssignmentTableViewController" customModule="Assignments" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xnP-aA-v9m">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="1200"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="1200"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
@@ -826,13 +821,16 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="Add:" destination="SkM-X5-BEC" eventType="touchUpInside" id="6Hn-qn-qVP"/>
+                                    <action selector="Add:" destination="SkM-X5-BEC" eventType="touchUpInside" id="kU3-Ck-yTE"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PFE-Ok-kpO">
                                 <rect key="frame" x="163" y="68" width="200" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="DidEndOnExit:" destination="SkM-X5-BEC" eventType="editingDidEndOnExit" id="jaf-n4-aDh"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0mx-s0-W9f">
                                 <rect key="frame" x="163" y="103" width="97" height="30"/>
@@ -841,6 +839,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="DidEndOnExit:" destination="SkM-X5-BEC" eventType="editingDidEndOnExit" id="RFv-VS-ajz"/>
+                                </connections>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -869,7 +870,7 @@
             </objects>
             <point key="canvasLocation" x="3175" y="-1664"/>
         </scene>
-        <!--View Controller-->
+        <!--Item-->
         <scene sceneID="g6M-bg-x4a">
             <objects>
                 <viewController id="YDM-e9-Qjj" customClass="ACViewController" customModule="Assignments" customModuleProvider="target" sceneMemberID="viewController">
@@ -882,7 +883,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="phe-rJ-qqX">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="507"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AssignmentIdentifier" textLabel="gSf-nr-3da" detailTextLabel="XG4-VM-cg2" style="IBUITableViewCellStyleSubtitle" id="4f4-SY-720">
@@ -931,56 +932,46 @@
                                     <outlet property="delegate" destination="YDM-e9-Qjj" id="zZP-V7-5PN"/>
                                 </connections>
                             </tableView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zVX-2V-A5n">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem id="ofu-1n-W0x">
+                                        <nil key="title"/>
+                                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="jfG-tY-A0S">
+                                            <rect key="frame" x="180" y="8" width="240" height="29"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <segments>
+                                                <segment title="Assignment"/>
+                                                <segment title="Course"/>
+                                            </segments>
+                                            <connections>
+                                                <action selector="ACSwitchChanged:" destination="YDM-e9-Qjj" eventType="valueChanged" id="wSS-oL-Ful"/>
+                                            </connections>
+                                        </segmentedControl>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="phe-rJ-qqX" firstAttribute="leading" secondItem="E7o-OX-hIQ" secondAttribute="leading" id="30c-va-xel"/>
-                            <constraint firstAttribute="trailing" secondItem="phe-rJ-qqX" secondAttribute="trailing" id="6tk-Pl-DA1"/>
-                            <constraint firstItem="phe-rJ-qqX" firstAttribute="bottom" secondItem="SgP-MO-LFA" secondAttribute="top" id="J7c-Aq-Bbk"/>
-                            <constraint firstItem="phe-rJ-qqX" firstAttribute="top" secondItem="E7o-OX-hIQ" secondAttribute="top" id="z8i-hB-WeG"/>
+                            <constraint firstItem="zVX-2V-A5n" firstAttribute="leading" secondItem="phe-rJ-qqX" secondAttribute="leading" id="3Je-Q0-lQL"/>
+                            <constraint firstItem="zVX-2V-A5n" firstAttribute="leading" secondItem="E7o-OX-hIQ" secondAttribute="leading" id="7NJ-9a-voc"/>
+                            <constraint firstItem="zVX-2V-A5n" firstAttribute="top" secondItem="E7o-OX-hIQ" secondAttribute="top" id="Huf-JU-Ng6"/>
+                            <constraint firstItem="phe-rJ-qqX" firstAttribute="bottom" secondItem="SgP-MO-LFA" secondAttribute="top" id="JM9-Cu-Zbx"/>
+                            <constraint firstAttribute="trailing" secondItem="zVX-2V-A5n" secondAttribute="trailing" id="ZhU-MF-YEh"/>
+                            <constraint firstItem="phe-rJ-qqX" firstAttribute="trailing" secondItem="zVX-2V-A5n" secondAttribute="trailing" id="jMK-iB-yOg"/>
+                            <constraint firstItem="phe-rJ-qqX" firstAttribute="top" secondItem="zVX-2V-A5n" secondAttribute="bottom" id="roI-js-wIr"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Xh9-SN-Ffh">
-                        <nil key="title"/>
-                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="cP9-Md-pgE">
-                            <rect key="frame" x="180" y="7" width="240" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <segments>
-                                <segment title="Assignments"/>
-                                <segment title="Courses"/>
-                            </segments>
-                            <connections>
-                                <action selector="ACSwitchChanged:" destination="YDM-e9-Qjj" eventType="valueChanged" id="G30-mX-ugG"/>
-                            </connections>
-                        </segmentedControl>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="Item" image="ACList" id="gjF-Sc-bgS"/>
                     <connections>
-                        <outlet property="ACSwitch" destination="cP9-Md-pgE" id="J9G-iw-fj3"/>
+                        <outlet property="ACSwitch" destination="jfG-tY-A0S" id="ch7-Jf-fu7"/>
                         <outlet property="ACTableView" destination="phe-rJ-qqX" id="Bzy-BX-SJR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Naq-Z1-9PF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="114" y="-1392"/>
-        </scene>
-        <!--Item-->
-        <scene sceneID="6qd-sx-EwI">
-            <objects>
-                <navigationController id="Q6T-o9-Kvk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="ACList" id="XRH-BH-3Sa"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="1Fg-1c-4gO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.54625490190000003" green="0.66513789700000003" blue="0.78998234710000004" alpha="0.77000000000000002" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="YDM-e9-Qjj" kind="relationship" relationship="rootViewController" id="bnF-dU-dE7"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="XFk-Aq-cF9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="0.0" y="-678"/>
+            <point key="canvasLocation" x="85" y="-675"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -997,7 +988,7 @@
                         <segue destination="U5O-ue-Isu" kind="relationship" relationship="viewControllers" id="lIx-lW-uDE"/>
                         <segue destination="E6Y-4W-K7o" kind="relationship" relationship="viewControllers" id="cRz-fP-PtK"/>
                         <segue destination="VBR-xU-jNM" kind="relationship" relationship="viewControllers" id="R5f-Yi-vvq"/>
-                        <segue destination="Q6T-o9-Kvk" kind="relationship" relationship="viewControllers" id="Vn4-Nr-018"/>
+                        <segue destination="YDM-e9-Qjj" kind="relationship" relationship="viewControllers" id="LFA-4W-9zA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
