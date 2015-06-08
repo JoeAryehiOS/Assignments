@@ -17,6 +17,11 @@ class CourseViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        view.addGestureRecognizer(tap)
+    }
+    func DismissKeyboard(){
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {

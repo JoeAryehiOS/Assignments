@@ -26,11 +26,17 @@ class CourseContentsTableViewController: UITableViewController {
         CourseNumber.text = course.courseNumber
         CourseName.userInteractionEnabled = false
         CourseNumber.userInteractionEnabled = false
+        Save()
+        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        view.addGestureRecognizer(tap)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    func DismissKeyboard(){
+        view.endEditing(true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,6 +45,19 @@ class CourseContentsTableViewController: UITableViewController {
     }
 
     
+    func Save(){
+        CourseNumber.userInteractionEnabled = false
+        CourseName.userInteractionEnabled = false
+        let editButton = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "Edit")
+        self.navigationItem.rightBarButtonItem = editButton
+    }
+    func Edit(){
+        CourseName.userInteractionEnabled = true
+        CourseName.userInteractionEnabled = true
+               let saveButton = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "Save")
+        self.navigationItem.rightBarButtonItem = saveButton
+    }
+
     
     
     
