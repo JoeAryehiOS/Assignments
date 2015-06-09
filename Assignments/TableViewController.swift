@@ -10,6 +10,7 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
+    @IBOutlet var ACTable: UITableView!
     @IBOutlet weak var ACSwitch: UISegmentedControl!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +37,7 @@ class TableViewController: UITableViewController {
     }
     
     @IBAction func Add(sender: AnyObject) {
+        if(ACSwitch.selectedSegmentIndex == 0){
         let alert = UIAlertController(title: "Add", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         let assignmentAction = UIAlertAction(title: "Assignment", style: UIAlertActionStyle.Default){
@@ -48,15 +50,37 @@ class TableViewController: UITableViewController {
         alert.addAction(assignmentAction)
         alert.addAction(cancelAction)
         presentViewController(alert, animated: true, completion: nil)
+        }else{
+            let alert = UIAlertController(title: "Add", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+            
+            let assignmentAction = UIAlertAction(title: "Course", style: UIAlertActionStyle.Default){
+                action in
+                self.performSegueWithIdentifier("Course", sender: self)
+                
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            
+            alert.addAction(assignmentAction)
+            alert.addAction(cancelAction)
+            presentViewController(alert, animated: true, completion: nil)
+            
+        }
     }
     
-   
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if(ACSwitch.selectedSegmentIndex == 0){
+            self.performSegueWithIdentifier("ShowAssignment", sender: self)
+        }else{
+            self.performSegueWithIdentifier("ShowCourse", sender: self)
+        }
+    }
     @IBAction func ACSwitch(sender: AnyObject) {
         switch(ACSwitch.selectedSegmentIndex){
         case 0: break
         case 1: self.tableView.reloadData()
         default: break
         }
+        ACTable.reloadData()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -207,11 +231,23 @@ class TableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "showAssignment"){
+        switch (segue.identifier!){
+        case "ShowAssignment":
             let indexPath = self.tableView.indexPathForSelectedRow()!
             CourseList.List.current = indexPath.section
             CourseList.List.list[CourseList.List.current].current = indexPath.row
-                    }
+        case "ShowCourse":
+            let indexPath = self.tableView.indexPathForSelectedRow()!
+            CourseList.List.current = indexPath.section
+            let a = segue.destinationViewController as! CourseContentsTableViewController
+            a.course = CourseList.List.list[CourseList.List.current]
+        default: break
+        }
+//        if(segue.identifier == "showAssignment"){
+//            let indexPath = self.tableView.indexPathForSelectedRow()!
+//            CourseList.List.current = indexPath.section
+//            CourseList.List.list[CourseList.List.current].current = indexPath.row
+//                    }
                           }
     
     

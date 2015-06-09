@@ -12,7 +12,8 @@ class AssignmentDetailViewController: UIViewController, UIPickerViewDelegate, UI
     var ac: assignmentCourse?
         override func viewDidLoad() {
         super.viewDidLoad()
-        
+            var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+            view.addGestureRecognizer(tap)
     }
     
 
@@ -26,6 +27,9 @@ class AssignmentDetailViewController: UIViewController, UIPickerViewDelegate, UI
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func DismissKeyboard(){
+        view.endEditing(true)
     }
     
     @IBAction func Add(sender: AnyObject) {
@@ -94,6 +98,10 @@ class AssignmentDetailViewController: UIViewController, UIPickerViewDelegate, UI
         return 2
     }
     
+    @IBAction func DidEndOnExit(sender: AnyObject) {
+        NameField.resignFirstResponder()
+        
+    }
     
 }
 enum assignmentCourse{

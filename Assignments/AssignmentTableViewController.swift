@@ -38,6 +38,11 @@ class AssignmentTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         self.navigationItem.title = a.assignmentName
        Save()
+        var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        view.addGestureRecognizer(tap)
+    }
+    func DismissKeyboard(){
+        view.endEditing(true)
     }
     
 
