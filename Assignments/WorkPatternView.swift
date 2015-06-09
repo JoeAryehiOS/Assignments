@@ -25,8 +25,11 @@ class WorkPatternView: UIView {
 //        
 //        CGContextFillRect(context, rect)
         let numberOfSections: CGFloat = CGFloat(timeToComplete / CourseList.List.workPeriod)
-        let sectionWidth: CGFloat = CGFloat(frame.width) / numberOfSections
-        for var i: CGFloat = 0.0; i <= numberOfSections; ++i{
+        println(numberOfSections)
+        println("ttc:\(timeToComplete)")
+        println("wp\(CourseList.List.workPeriod)")
+        let sectionWidth: CGFloat = CGFloat(frame.width / numberOfSections)
+        for var i: CGFloat = 0.0; i <= numberOfSections ; ++i{
             let partialWidth = (sectionWidth * CGFloat(CourseList.List.onPercentage))
             var rect:CGRect = CGRectMake(CGFloat(i * sectionWidth),0.0, partialWidth, frame.height)
             var colorComponents: [CGFloat] = [ (156.0 / 255.0) , (185.0 / 255.0) , (211.0 / 255.0), 0.77]

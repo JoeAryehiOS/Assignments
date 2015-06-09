@@ -126,11 +126,11 @@ class WorkViewController: UIViewController {
         workPatternView.setNeedsDisplay()
         TimeLabel.text = formatTime(time)
         if(time % workTime == 0){
+            //invalidateTimer()
             selectedAssignment.timeSpent = Double(Int(selectedAssignment.timeSpent) + workTime)
             if(selectedAssignment.checkCompletion()){
-                invalidateTimer()
                 let doneController: UIAlertController = UIAlertController(title: "Are You finished?", message: "Select the appropriate option", preferredStyle: .ActionSheet)
-                
+                invalidateTimer()
                 //Create and add the Cancel action
                 let cancelAction: UIAlertAction = UIAlertAction(title: "Yes", style: .Cancel) { action -> Void in
                     //Just dismiss the action sheet
