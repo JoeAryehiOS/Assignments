@@ -50,7 +50,7 @@ class SettingsTableViewController: UITableViewController {
 
     @IBAction func WorkPatternPeriodSliderChanged(sender: AnyObject) {
         WorkPatternPeriodLabel.text = "\(Int(WorkPatternPeriodSlider.value))"
-        CourseList.List.workPeriod = Int(WorkPatternPeriodSlider.value)
+        CourseList.List.workPeriod = Int(WorkPatternPeriodSlider.value * 60)
     }
     
     @IBAction func onPercentageSliderChanged(sender: AnyObject) {

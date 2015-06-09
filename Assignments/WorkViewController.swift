@@ -36,11 +36,11 @@ class WorkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         CourseList.List.unArchiving()
-        
+        workTime = CourseList.List.workPeriod
         time = 0
         stopButton.hidden = true
         ResumeButton.hidden = true
-        workTime = 10
+       
         
         
         // Do any additional setup after loading the view.
@@ -125,10 +125,10 @@ class WorkViewController: UIViewController {
         workPatternView.currentTime = time
         workPatternView.setNeedsDisplay()
         TimeLabel.text = formatTime(time)
-        if(time.minute == workTime){
-            invalidateTimer()
-            selectedAssignment.timeSpent = Double(Int(selectedAssignment.timeSpent) + workTime/60)
+        if(time % workTime == 0){
+            selectedAssignment.timeSpent = Double(Int(selectedAssignment.timeSpent) + workTime)
             if(selectedAssignment.checkCompletion()){
+                invalidateTimer()
                 let doneController: UIAlertController = UIAlertController(title: "Are You finished?", message: "Select the appropriate option", preferredStyle: .ActionSheet)
                 
                 //Create and add the Cancel action
@@ -139,18 +139,51 @@ class WorkViewController: UIViewController {
                 //Create and add first option actionself.selectedAssignment.increaseTime(self.workTime/60)
                 let takePictureAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Default){
                     action in
-                    self.selectedAssignment.increaseTime(Double(self.workTime/60))
+                    self.selectedAssignment.increaseTime(Double(self.workTime))
                 }
                 
                 doneController.addAction(takePictureAction)
             }
             var alert = UIAlertView()
-            alert.title = "Done Working"
-            alert.message = "Time for a break"
-            alert.addButtonWithTitle("YAY!")
+            alert.title = "Break's over"
+            alert.message = "Time to work"
+            alert.addButtonWithTitle("ok")
             alert.show()
             
         }
+        let remainder = time % workTime
+        let breakRemainder = Int(Double(workTime) * CourseList.List.onPercentage)
+        if(remainder == breakRemainder){
+            
+            selectedAssignment.timeSpent = Double(Int(selectedAssignment.timeSpent) + workTime)
+            if(selectedAssignment.checkCompletion()){
+                invalidateTimer()
+                let doneController: UIAlertController = UIAlertController(title: "Are You finished?", message: "Select the appropriate option", preferredStyle: .ActionSheet)
+                
+                //Create and add the Cancel action
+                let cancelAction: UIAlertAction = UIAlertAction(title: "Yes", style: .Cancel) { action -> Void in
+                    //Just dismiss the action sheet
+                }
+                doneController.addAction(cancelAction)
+                //Create and add first option actionself.selectedAssignment.increaseTime(self.workTime/60)
+                let takePictureAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Default){
+                    action in
+                    self.selectedAssignment.increaseTime(Double(self.workTime))
+                    self.startTimer()
+                }
+                
+                doneController.addAction(takePictureAction)
+            }
+            var alert = UIAlertView()
+            alert.title = "Done Working "
+            alert.message = "Time for a break"
+            alert.addButtonWithTitle("sweet")
+            alert.show()
+            
+
+        }
+        
+        
     }
     
     
