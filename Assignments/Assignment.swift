@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Assignment:NSObject, NSCoding {
+class Assignment: NSObject, NSCoding {
     
     var assignmentName: String!
     var timeSpent: Double = 0.0

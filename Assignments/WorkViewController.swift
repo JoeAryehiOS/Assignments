@@ -2,6 +2,16 @@
 //  WorkViewController.swift
 //  Assignments
 //
+//  Created by Aryeh Lieberman on 6/9/15.
+//  Copyright (c) 2015 JoeAryehiOS. All rights reserved.
+//
+
+import UIKit
+
+//
+//  WorkViewController.swift
+//  Assignments
+//
 //  Created by Aryeh Lieberman on 5/20/15.
 //  Copyright (c) 2015 JoeAryehiOS. All rights reserved.
 //
@@ -26,18 +36,18 @@ class WorkViewController: UIViewController {
         time = 0
         stopButton.hidden = true
         workTime = 10
-       
-
+        
+        
         
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-   
+    
     @IBAction func Start(sender: AnyObject) {
         startTimer()
         startButton.hidden = true
@@ -52,7 +62,7 @@ class WorkViewController: UIViewController {
     @IBAction func PauseButtonPressed(sender: UIButton) {
     }
     func startTimer(){
-                   timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
         
     }
     func pauseTimer(){
@@ -61,8 +71,8 @@ class WorkViewController: UIViewController {
     }
     func stopTimer(){
         invalidateTimer()
+        TimeLabel.text = "00:00:00"
         
-       
     }
     func invalidateTimer(){
         if(timer != nil){
@@ -71,9 +81,10 @@ class WorkViewController: UIViewController {
     }
     func updateTime(){
         time++
+        TimeLabel.text = formatTime(time)
         if(time.minute == workTime){
             invalidateTimer()
-            selectedAssignment.timeSpent+=workTime/60
+            selectedAssignment.timeSpent = Double(Int(selectedAssignment.timeSpent) + workTime/60)
             if(selectedAssignment.checkCompletion()){
                 let doneController: UIAlertController = UIAlertController(title: "Are You finished?", message: "Select the appropriate option", preferredStyle: .ActionSheet)
                 
@@ -82,10 +93,12 @@ class WorkViewController: UIViewController {
                     //Just dismiss the action sheet
                 }
                 doneController.addAction(cancelAction)
-                //Create and add first option action
-                let takePictureAction: UIAlertAction = UIAlertAction(title: "No", style: .Default) { action -> Void in
-                    self.selectedAssignment.increaseTime(self.workTime/60)
+                //Create and add first option actionself.selectedAssignment.increaseTime(self.workTime/60)
+                let takePictureAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Default){
+                    action in
+                    self.selectedAssignment.increaseTime(Double(self.workTime/60))
                 }
+                
                 doneController.addAction(takePictureAction)
             }
             var alert = UIAlertView()
@@ -95,23 +108,49 @@ class WorkViewController: UIViewController {
             alert.show()
             
         }
-                }
+    }
     
-
+    
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    func formatTime(time: Int)-> String{
+        var h: String{
+            if((time.hour / 10) < 1){
+                return "0\(time.hour)"
+            }else{
+                return "\(time.hour)"
+            }
+        }
+        var m: String{
+            if((time.minute / 10) < 1){
+                return "0\(time.minute)"
+            }else{
+                return "\(time.minute)"
+            }
+        }
+        var s: String{
+            if((time.second / 10) < 1){
+                return "0\(time.second)"
+            }else{
+                return "\(time.second)"
+            }
+        }
+        var t = "\(h):\(m):\(s)"
+        
+        
+        return t
+    }
 }
 extension Int{
     var second: Int{ return self}
     var minute: Int{ return second / 60}
     var hour: Int{ return minute / 60}
-
+    
 }
