@@ -18,12 +18,14 @@ class WorkViewController: UIViewController {
     
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
-    var time: Int!
+    var time: Int = 0
+    var workTime:Int!
+    var selectedAssignment:Assignment!
     override func viewDidLoad() {
         super.viewDidLoad()
         time = 0
         stopButton.hidden = true
-        
+        workTime = 10
        
 
         
@@ -68,6 +70,31 @@ class WorkViewController: UIViewController {
         }
     }
     func updateTime(){
+        time++
+        if(time.minute == workTime){
+            invalidateTimer()
+            selectedAssignment.timeSpent+=workTime/60
+            if(selectedAssignment.checkCompletion()){
+                let doneController: UIAlertController = UIAlertController(title: "Are You finished?", message: "Select the appropriate option", preferredStyle: .ActionSheet)
+                
+                //Create and add the Cancel action
+                let cancelAction: UIAlertAction = UIAlertAction(title: "Yes", style: .Cancel) { action -> Void in
+                    //Just dismiss the action sheet
+                }
+                doneController.addAction(cancelAction)
+                //Create and add first option action
+                let takePictureAction: UIAlertAction = UIAlertAction(title: "No", style: .Default) { action -> Void in
+                    self.selectedAssignment.increaseTime(self.workTime/60)
+                }
+                doneController.addAction(takePictureAction)
+            }
+            var alert = UIAlertView()
+            alert.title = "Done Working"
+            alert.message = "Time for a break"
+            alert.addButtonWithTitle("YAY!")
+            alert.show()
+            
+        }
                 }
     
 
