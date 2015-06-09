@@ -18,8 +18,8 @@ class WorkPatternView: UIView {
         // Drawing code
         let context = UIGraphicsGetCurrentContext()
         let colorspace = CGColorSpaceCreateDeviceRGB()
-//        var rect:CGRect = CGRectMake(0.0,0.0, 20, 20)
-//        var colorComponents: [CGFloat] = [0.1 , 0.0 , 0.9, 1.0]
+//        var rect:CGRect = CGRectMake(0.0,0.0, frame.width, frame.height)
+//        var colorComponents: [CGFloat] = [0.3 , 0.0 , 0.3, 0.5]
 //        var color = CGColorCreate(colorspace, colorComponents)
 //        CGContextSetFillColorWithColor(context, color)
 //        
@@ -35,13 +35,14 @@ class WorkPatternView: UIView {
             CGContextFillRect(context, rect)
             
         }
-        if let t = currentTime{
-        var rect:CGRect = CGRectMake((CGFloat(t/timeToComplete) * (frame.width)),0.0, 1.5, frame.height)
-        var colorComponents: [CGFloat] = [ 1.0 , 0.0 , 0.0, 1.0]
-        var color = CGColorCreate(colorspace, colorComponents)
-        CGContextSetFillColorWithColor(context, color)
+        
+        if(currentTime != nil){
+            var x:CGFloat = CGFloat((Double(timeToComplete - currentTime) / Double(timeToComplete))) * frame.width
+                        var rect:CGRect = CGRectMake(x,0.0, 1.5, frame.height)
+            var colorComponents: [CGFloat] = [ 1.0 , 0.0 , 0.0, 1.0]
+            var color = CGColorCreate(colorspace, colorComponents)
+            CGContextSetFillColorWithColor(context, color)
             CGContextFillRect(context, rect)}
-
         
         
         

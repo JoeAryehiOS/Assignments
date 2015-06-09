@@ -57,7 +57,7 @@ class SettingsTableViewController: UITableViewController {
         let value = onPercentageSlider.value
         
         let rounded = round(value * 100)/100
-        println(rounded)
+        
         CourseList.List.onPercentage = Double(rounded)
         onPercentageLabel.text = "\(rounded)%"
     }
