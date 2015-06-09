@@ -28,10 +28,10 @@ class AssignmentTableViewController: UITableViewController {
         CourseField.text = CourseList.List.list[CourseList.List.current].courseName
         DetailView.text = a.detail
         DueDatePicker.date = a.dueDate
-        TTCHours.text = "\(a.timeToComplete / 60)"
-        TTCMinutes.text = "\(a.timeToComplete % 60)"
-        TPIHours.text = "\(a.timeSpent / 60)"
-        TPIMinutes.text = "\(a.timeSpent % 60)"
+        TTCHours.text = "\(Int(a.timeToComplete / 60))"
+        TTCMinutes.text = "\(Int(a.timeToComplete % 60))"
+        TPIHours.text = "\(Int(a.timeSpent / 60))"
+        TPIMinutes.text = "\(Int(a.timeSpent % 60))"
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 

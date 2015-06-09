@@ -50,9 +50,31 @@ class WorkViewController: UIViewController {
     
     
     @IBAction func Start(sender: AnyObject) {
-        startTimer()
-        startButton.hidden = true
-        stopButton.hidden = false
+        let chooseAssignmentController: UIAlertController = UIAlertController(title: "Choose", message: "Which Assignment do you want to work on", preferredStyle: UIAlertControllerStyle.ActionSheet)
+        let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel){
+            action in
+        }
+        var actions: [UIAlertAction] = Array()
+        for course in CourseList.List.list{
+            for assignment in course.Assignments{
+                
+                    actions.append(UIAlertAction(title: assignment.assignmentName, style: UIAlertActionStyle.Default){action in
+                        self.selectedAssignment = assignment
+                        self.startTimer()
+                        self.startButton.hidden = true
+                        self.stopButton.hidden = false
+                        })
+                
+                
+            }
+        }
+        chooseAssignmentController.addAction(cancelAction)
+        for i in actions{
+            chooseAssignmentController.addAction(i)
+        }
+        presentViewController(chooseAssignmentController, animated: true, completion: nil)
+            
+        
     }
     @IBAction func Stop(sender: AnyObject) {
         stopTimer()
@@ -64,6 +86,7 @@ class WorkViewController: UIViewController {
     }
     func startTimer(){
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
+        time = Int(selectedAssignment.timeToComplete)
         
     }
     func pauseTimer(){
@@ -81,7 +104,7 @@ class WorkViewController: UIViewController {
         }
     }
     func updateTime(){
-        time++
+        time--
         TimeLabel.text = formatTime(time)
         if(time.minute == workTime){
             invalidateTimer()

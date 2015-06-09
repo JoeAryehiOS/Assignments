@@ -521,7 +521,7 @@
                                                     </variation>
                                                 </textField>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JcB-9B-Jqd">
-                                                    <rect key="frame" x="199" y="8" width="26" height="30"/>
+                                                    <rect key="frame" x="193" y="8" width="26" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="97" id="LMC-VE-qM9"/>
                                                         <constraint firstAttribute="width" constant="26" id="xc5-Eh-dDk"/>
@@ -567,7 +567,7 @@
                                                 <constraint firstItem="mzc-kP-t5i" firstAttribute="top" secondItem="X32-q2-6bP" secondAttribute="topMargin" id="gZY-wU-wJ6"/>
                                                 <constraint firstItem="JcB-9B-Jqd" firstAttribute="top" secondItem="X32-q2-6bP" secondAttribute="topMargin" id="iTO-kG-xud"/>
                                                 <constraint firstItem="mzc-kP-t5i" firstAttribute="baseline" secondItem="JcB-9B-Jqd" secondAttribute="baseline" id="kxo-eV-1as"/>
-                                                <constraint firstItem="JcB-9B-Jqd" firstAttribute="leading" secondItem="mcj-tq-Jhd" secondAttribute="trailing" constant="8" id="rsj-qU-mrR"/>
+                                                <constraint firstItem="JcB-9B-Jqd" firstAttribute="leading" secondItem="mcj-tq-Jhd" secondAttribute="trailing" constant="2" id="rsj-qU-mrR"/>
                                                 <constraint firstItem="mzc-kP-t5i" firstAttribute="baseline" secondItem="yTu-qO-PwV" secondAttribute="firstBaseline" id="sXf-sL-Gy0"/>
                                                 <constraint firstItem="yTu-qO-PwV" firstAttribute="leading" secondItem="X32-q2-6bP" secondAttribute="leadingMargin" constant="-7" id="vVF-Qu-x1I"/>
                                             </constraints>
