@@ -20,7 +20,7 @@ class CourseContentsTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        course = CourseList.List.list[CourseList.List.current]
+       
         self.navigationController?.title = course.courseName
         CourseName.text = course.courseName
         CourseNumber.text = course.courseNumber
@@ -38,6 +38,7 @@ class CourseContentsTableViewController: UITableViewController {
     func DismissKeyboard(){
         view.endEditing(true)
     }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -37,6 +37,7 @@ class TableViewController: UITableViewController {
     }
     
     @IBAction func Add(sender: AnyObject) {
+        if(ACSwitch.selectedSegmentIndex == 0){
         let alert = UIAlertController(title: "Add", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
         let assignmentAction = UIAlertAction(title: "Assignment", style: UIAlertActionStyle.Default){
@@ -49,6 +50,21 @@ class TableViewController: UITableViewController {
         alert.addAction(assignmentAction)
         alert.addAction(cancelAction)
         presentViewController(alert, animated: true, completion: nil)
+        }else{
+            let alert = UIAlertController(title: "Add", message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+            
+            let assignmentAction = UIAlertAction(title: "Course", style: UIAlertActionStyle.Default){
+                action in
+                self.performSegueWithIdentifier("Course", sender: self)
+                
+            }
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            
+            alert.addAction(assignmentAction)
+            alert.addAction(cancelAction)
+            presentViewController(alert, animated: true, completion: nil)
+            
+        }
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
@@ -223,6 +239,8 @@ class TableViewController: UITableViewController {
         case "ShowCourse":
             let indexPath = self.tableView.indexPathForSelectedRow()!
             CourseList.List.current = indexPath.section
+            let a = segue.destinationViewController as! CourseContentsTableViewController
+            a.course = CourseList.List.list[CourseList.List.current]
         default: break
         }
 //        if(segue.identifier == "showAssignment"){
