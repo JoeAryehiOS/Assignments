@@ -149,8 +149,8 @@ class WorkViewController: UIViewController {
     }
 }
 extension Int{
-    var second: Int{ return self}
-    var minute: Int{ return second / 60}
+    var second: Int{ return self % 60}
+    var minute: Int{ return self / 60}
     var hour: Int{ return minute / 60}
     
 }
