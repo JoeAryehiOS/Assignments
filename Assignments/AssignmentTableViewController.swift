@@ -19,19 +19,22 @@ class AssignmentTableViewController: UITableViewController {
     @IBOutlet weak var TPIHours: UITextField!
     @IBOutlet weak var TTCHours: UITextField!
     @IBOutlet weak var TTCMinutes: UITextField!
-    @IBOutlet weak var editButton: UIBarButtonItem!
+    
+    @IBOutlet weak var CompletedSwitch: UISwitch!
+    var a: Assignment!
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        let a = CourseList.List.list[CourseList.List.current].Assignments[CourseList.List.list[CourseList.List.current].current]
+        
         NameField.text = a.assignmentName
         CourseField.text = CourseList.List.list[CourseList.List.current].courseName
         DetailView.text = a.detail
         DueDatePicker.date = a.dueDate
-        TTCHours.text = "\(Int(a.timeToComplete / 60))"
-        TTCMinutes.text = "\(Int(a.timeToComplete % 60))"
-        TPIHours.text = "\(Int(a.timeSpent / 60))"
-        TPIMinutes.text = "\(Int(a.timeSpent % 60))"
+        TTCHours.text = "\(Int(a.timeToComplete / 60 / 60))"
+        TTCMinutes.text = "\(Int(a.timeToComplete / 60))"
+        TPIHours.text = "\(Int(a.timeSpent / 60 / 60))"
+        TPIMinutes.text = "\(Int(a.timeSpent / 60))"
+        CompletedSwitch.on = a.isCompleted
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -60,18 +63,26 @@ class AssignmentTableViewController: UITableViewController {
         TPIHours.userInteractionEnabled = false
         TTCHours.userInteractionEnabled = false
         TTCMinutes.userInteractionEnabled = false
+        CompletedSwitch.userInteractionEnabled = false
+        a.assignmentName = NameField.text
+        a.detail = DetailView.text
+        a.dueDate = DueDatePicker.date
+        a.timeSpent = Double(TPIMinutes.text.toInt()! * 60) + Double(TPIHours.text.toInt()! * 3600)
+        a.timeToComplete = Double(TTCMinutes.text.toInt()! * 60) + Double(TTCHours.text.toInt()! * 3600)
+        a.isCompleted = CompletedSwitch.on
         let editButton = UIBarButtonItem(barButtonSystemItem: .Edit, target: self, action: "Edit")
         self.navigationItem.rightBarButtonItem = editButton
     }
     func Edit(){
         NameField.userInteractionEnabled = true
-        CourseField.userInteractionEnabled = true
+        //CourseField.userInteractionEnabled = true
         DetailView.userInteractionEnabled = true
         DueDatePicker.userInteractionEnabled = true
         TPIMinutes.userInteractionEnabled = true
         TPIHours.userInteractionEnabled = true
         TTCHours.userInteractionEnabled = true
         TTCMinutes.userInteractionEnabled = true
+        CompletedSwitch.userInteractionEnabled = true
         let saveButton = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "Save")
         self.navigationItem.rightBarButtonItem = saveButton
     }

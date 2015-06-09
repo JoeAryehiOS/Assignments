@@ -25,6 +25,7 @@ class WorkViewController: UIViewController {
     @IBOutlet weak var StudyPatternImageView: UIImageView!
     
     @IBOutlet weak var PauseResumeButton: UIButton!
+    @IBOutlet weak var ResumeButton: UIButton!
     
     @IBOutlet weak var stopButton: UIButton!
     @IBOutlet weak var startButton: UIButton!
@@ -36,6 +37,7 @@ class WorkViewController: UIViewController {
         CourseList.List.unArchiving()
         time = 0
         stopButton.hidden = true
+        ResumeButton.hidden = true
         workTime = 10
         
         
@@ -60,6 +62,7 @@ class WorkViewController: UIViewController {
                 
                     actions.append(UIAlertAction(title: assignment.assignmentName, style: UIAlertActionStyle.Default){action in
                         self.selectedAssignment = assignment
+                        self.time = Int(self.selectedAssignment.timeToComplete)
                         self.startTimer()
                         self.startButton.hidden = true
                         self.stopButton.hidden = false
@@ -83,10 +86,21 @@ class WorkViewController: UIViewController {
     }
     
     @IBAction func PauseButtonPressed(sender: UIButton) {
+        pauseTimer()
+        
+        ResumeButton.hidden = false
+        PauseResumeButton.hidden = true
     }
+    @IBAction func ResumeButtonPressed(sender: AnyObject) {
+        startTimer()
+        PauseResumeButton.hidden = false
+        ResumeButton.hidden = true
+    }
+    
+    
     func startTimer(){
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateTime"), userInfo: nil, repeats: true)
-        time = Int(selectedAssignment.timeToComplete)
+        
         
     }
     func pauseTimer(){
@@ -174,7 +188,7 @@ class WorkViewController: UIViewController {
 }
 extension Int{
     var second: Int{ return self % 60}
-    var minute: Int{ return self / 60}
-    var hour: Int{ return minute / 60}
+    var minute: Int{ return (self % 3600) / 60}
+    var hour: Int{ return self / 3600}
     
 }

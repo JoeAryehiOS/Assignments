@@ -67,7 +67,13 @@ class ACViewController: UIViewController, UITableViewDataSource, UITableViewDele
             dateFormatter.timeZone = NSTimeZone.localTimeZone()
             
             cell.detailTextLabel?.text = "\(dateFormatter.stringFromDate(date))   \(detail)"
-            
+            if(CourseList.List.list[indexPath.section].Assignments[indexPath.row].isCompleted){
+            if(CourseList.List.showCompleted){
+                cell.tintColor = UIColor(red: 0, green: 1, blue: 0, alpha: 1)
+            }else{
+                
+                cell.hidden = true
+                }}
             return cell
         }else{
             let cell = tableView.dequeueReusableCellWithIdentifier("CourseIdentifier", forIndexPath: indexPath) as! UITableViewCell
@@ -81,8 +87,10 @@ class ACViewController: UIViewController, UITableViewDataSource, UITableViewDele
             
             return cell
         }
+        
 
     }
+    
     
     
 

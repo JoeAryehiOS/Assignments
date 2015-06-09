@@ -33,7 +33,7 @@ class AssignmentDetailViewController: UITableViewController, UIPickerViewDelegat
     }
     
     @IBAction func Add(sender: AnyObject) {
-        let time = Double(TimePicker.selectedRowInComponent(0) * 60) + Double(TimePicker.selectedRowInComponent(1))
+        let time = Double(TimePicker.selectedRowInComponent(0) * 60 * 60) + Double(TimePicker.selectedRowInComponent(1) * 60)
         let assignment = Assignment(assignmentName: NameField.text, dueDate: DatePicker.date, timeToComplete: time , Details: DetailField.text)
         //need to add timeToComplete
       CourseList.List.list[courseIndex!].Assignments.append(assignment)
@@ -73,15 +73,16 @@ class AssignmentDetailViewController: UITableViewController, UIPickerViewDelegat
     
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+   /* override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-    }
-    */
+        if(segue.identifier == )
+    }*/
+
     func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         if(component == 0){
             return 100

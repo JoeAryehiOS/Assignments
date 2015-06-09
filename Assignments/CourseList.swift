@@ -17,6 +17,7 @@ class CourseList{
     }
     var list: [Course] = Array()
     var current: Int = 0
+    var showCompleted: Bool = true
     func addCourse(name: String, number: String?){
         list.append(Course(courseName: name, courseNumber: number))
         

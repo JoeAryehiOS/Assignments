@@ -234,11 +234,14 @@ class TableViewController: UITableViewController {
             let indexPath = self.tableView.indexPathForSelectedRow()!
             CourseList.List.current = indexPath.section
             CourseList.List.list[CourseList.List.current].current = indexPath.row
+            let dvc = segue.destinationViewController as! AssignmentTableViewController
+            dvc.a = CourseList.List.list[indexPath.section].Assignments[indexPath.row]
         case "ShowCourse":
             let indexPath = self.tableView.indexPathForSelectedRow()!
             CourseList.List.current = indexPath.section
-            let a = segue.destinationViewController as! CourseContentsTableViewController
-            a.course = CourseList.List.list[CourseList.List.current]
+            let dvccctc = segue.destinationViewController as! CourseContentsTableViewController
+            dvccctc.course = CourseList.List.list[CourseList.List.current]
+        
         default: break
         }
 //        if(segue.identifier == "showAssignment"){
