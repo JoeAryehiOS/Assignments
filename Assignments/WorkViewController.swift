@@ -33,6 +33,7 @@ class WorkViewController: UIViewController {
     var selectedAssignment:Assignment!
     override func viewDidLoad() {
         super.viewDidLoad()
+        CourseList.List.unArchiving()
         time = 0
         stopButton.hidden = true
         workTime = 10
