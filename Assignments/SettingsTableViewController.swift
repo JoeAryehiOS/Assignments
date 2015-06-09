@@ -23,6 +23,8 @@ class SettingsTableViewController: UITableViewController {
     
     @IBOutlet weak var WorkPatternPeriodCell: UITableViewCell!
     @IBOutlet weak var onPercentageCell: UITableViewCell!
+    @IBOutlet weak var WorkPatternPeriodLabel: UILabel!
+    @IBOutlet weak var onPercentageLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,8 +42,25 @@ class SettingsTableViewController: UITableViewController {
     @IBAction func WorkPatternSwitchChanged(sender: AnyObject) {
         WorkPatternPeriodCell.hidden = !WorkPatternSwitch.on
         onPercentageCell.hidden = !WorkPatternSwitch.on
+        CourseList.List.useWorkPeriod = WorkPatternSwitch.on
+    }
+    @IBAction func ShowCompletedSwitchChanged(sender: AnyObject) {
+        CourseList.List.showCompleted = ShowCompletedAssignmentsSwitch.on
     }
 
+    @IBAction func WorkPatternPeriodSliderChanged(sender: AnyObject) {
+        WorkPatternPeriodLabel.text = "\(Int(WorkPatternPeriodSlider.value))"
+        CourseList.List.workPeriod = Int(WorkPatternPeriodSlider.value)
+    }
+    
+    @IBAction func onPercentageSliderChanged(sender: AnyObject) {
+        let value = onPercentageSlider.value
+        
+        let rounded = round(value * 100)/100
+        println(rounded)
+        CourseList.List.onPercentage = Double(rounded)
+        onPercentageLabel.text = "\(rounded)%"
+    }
     // MARK: - Table view data source
 
    

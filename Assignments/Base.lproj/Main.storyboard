@@ -1130,6 +1130,9 @@
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SNZ-ov-a7X">
                                                     <rect key="frame" x="543" y="6" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="ShowCompletedSwitchChanged:" destination="Dbm-bR-eOn" eventType="valueChanged" id="RuZ-3S-vLz"/>
+                                                    </connections>
                                                 </switch>
                                             </subviews>
                                             <constraints>
@@ -1193,13 +1196,35 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="Wxm-3X-2DS">
-                                                    <rect key="frame" x="169" y="7" width="425" height="31"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="60" translatesAutoresizingMaskIntoConstraints="NO" id="Wxm-3X-2DS">
+                                                    <rect key="frame" x="169" y="7" width="390" height="31"/>
+                                                    <connections>
+                                                        <action selector="WorkPatternPeriodSliderChanged:" destination="Dbm-bR-eOn" eventType="valueChanged" id="909-wZ-yYe"/>
+                                                    </connections>
                                                 </slider>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fta-Va-Ltd">
+                                                    <rect key="frame" x="565" y="16" width="24" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="3RF-hD-Ty0"/>
+                                                        <constraint firstAttribute="width" constant="24" id="90n-aq-b6h"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="90n-aq-b6h"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="Fta-Va-Ltd" firstAttribute="leading" secondItem="Wxm-3X-2DS" secondAttribute="trailing" constant="8" id="68h-QC-HrN"/>
                                                 <constraint firstItem="4QM-qX-t4q" firstAttribute="leading" secondItem="lrA-IH-2V0" secondAttribute="leadingMargin" id="CEZ-fk-xtF"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Fta-Va-Ltd" secondAttribute="trailing" constant="3" id="f4A-cf-rwc"/>
                                                 <constraint firstAttribute="centerY" secondItem="Wxm-3X-2DS" secondAttribute="centerY" id="hTr-zv-5JB"/>
+                                                <constraint firstItem="Fta-Va-Ltd" firstAttribute="bottom" secondItem="Wxm-3X-2DS" secondAttribute="bottom" id="nCV-rH-8XA"/>
+                                                <constraint firstItem="Fta-Va-Ltd" firstAttribute="leading" secondItem="Wxm-3X-2DS" secondAttribute="trailing" constant="8" id="okn-ND-0ie"/>
                                                 <constraint firstItem="4QM-qX-t4q" firstAttribute="bottom" secondItem="lrA-IH-2V0" secondAttribute="bottomMargin" id="ole-gG-fjC"/>
                                                 <constraint firstItem="Wxm-3X-2DS" firstAttribute="leading" secondItem="4QM-qX-t4q" secondAttribute="trailing" constant="8" id="sqh-kZ-m71"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Wxm-3X-2DS" secondAttribute="trailing" id="wQQ-WZ-ygm"/>
@@ -1207,6 +1232,7 @@
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
+                                                    <exclude reference="wQQ-WZ-ygm"/>
                                                     <exclude reference="zJE-Hl-Hth"/>
                                                 </mask>
                                             </variation>
@@ -1217,27 +1243,49 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4WD-aH-npA" id="eCD-Ch-M8I">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On Percentage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfV-Hc-fRK">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="On Percentage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfV-Hc-fRK">
                                                     <rect key="frame" x="8" y="14" width="115" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="115" id="U3A-3f-Sma"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iqf-GF-gkt">
-                                                    <rect key="frame" x="129" y="7" width="465" height="31"/>
+                                                <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iqf-GF-gkt">
+                                                    <rect key="frame" x="129" y="7" width="381" height="31"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="377" id="zpz-KN-Atr"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <action selector="onPercentageSliderChanged:" destination="Dbm-bR-eOn" eventType="valueChanged" id="XI8-PR-doe"/>
+                                                    </connections>
                                                 </slider>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0.75" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KMs-iv-Skl">
+                                                    <rect key="frame" x="516" y="14" width="76" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="76" id="y6t-Xr-Le3"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="centerY" secondItem="iqf-GF-gkt" secondAttribute="centerY" id="3JO-tu-eSr"/>
-                                                <constraint firstItem="iqf-GF-gkt" firstAttribute="leading" secondItem="SfV-Hc-fRK" secondAttribute="trailing" constant="8" id="7CJ-nw-SoV"/>
-                                                <constraint firstAttribute="centerY" secondItem="iqf-GF-gkt" secondAttribute="centerY" id="Xai-O2-QWh"/>
-                                                <constraint firstItem="SfV-Hc-fRK" firstAttribute="bottom" secondItem="eCD-Ch-M8I" secondAttribute="bottomMargin" id="Z6V-An-1R9"/>
-                                                <constraint firstItem="SfV-Hc-fRK" firstAttribute="leading" secondItem="eCD-Ch-M8I" secondAttribute="leadingMargin" id="c0X-UK-7oV"/>
+                                                <constraint firstItem="SfV-Hc-fRK" firstAttribute="leading" secondItem="eCD-Ch-M8I" secondAttribute="leadingMargin" constant="-7" id="5gZ-eQ-nv9"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="KMs-iv-Skl" secondAttribute="trailing" id="Ibk-N4-pFJ"/>
+                                                <constraint firstItem="iqf-GF-gkt" firstAttribute="leading" secondItem="SfV-Hc-fRK" secondAttribute="trailing" constant="8" symbolic="YES" id="IhB-Se-UoH"/>
+                                                <constraint firstItem="KMs-iv-Skl" firstAttribute="leading" secondItem="iqf-GF-gkt" secondAttribute="trailing" constant="8" symbolic="YES" id="J4v-dY-vpA"/>
+                                                <constraint firstItem="SfV-Hc-fRK" firstAttribute="baseline" secondItem="KMs-iv-Skl" secondAttribute="baseline" id="JBk-ZZ-XvF"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="iqf-GF-gkt" secondAttribute="trailing" id="hoQ-Qa-pHr"/>
+                                                <constraint firstItem="iqf-GF-gkt" firstAttribute="top" secondItem="eCD-Ch-M8I" secondAttribute="topMargin" constant="-1" id="n5q-Jo-Lr2"/>
+                                                <constraint firstItem="SfV-Hc-fRK" firstAttribute="bottom" secondItem="eCD-Ch-M8I" secondAttribute="bottomMargin" id="xI4-Rx-QYE"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
                                                     <exclude reference="3JO-tu-eSr"/>
+                                                    <exclude reference="hoQ-Qa-pHr"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1256,9 +1304,11 @@
                         <outlet property="ShowCompletedAssignmentsSwitch" destination="SNZ-ov-a7X" id="ASg-aZ-A7a"/>
                         <outlet property="WorkPatternCell" destination="IRp-zV-xDp" id="TaO-qb-jYh"/>
                         <outlet property="WorkPatternPeriodCell" destination="XxS-JG-S8s" id="uPn-Fm-upy"/>
+                        <outlet property="WorkPatternPeriodLabel" destination="Fta-Va-Ltd" id="ANR-cK-hy9"/>
                         <outlet property="WorkPatternPeriodSlider" destination="Wxm-3X-2DS" id="Kh5-0Q-mVX"/>
                         <outlet property="WorkPatternSwitch" destination="zbq-Yy-VZd" id="dcy-Ih-ENu"/>
                         <outlet property="onPercentageCell" destination="4WD-aH-npA" id="mIJ-hu-iJ5"/>
+                        <outlet property="onPercentageLabel" destination="KMs-iv-Skl" id="0hr-pg-JDl"/>
                         <outlet property="onPercentageSlider" destination="iqf-GF-gkt" id="VSr-7o-Ivy"/>
                     </connections>
                 </tableViewController>
