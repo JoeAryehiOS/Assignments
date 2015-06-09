@@ -39,17 +39,12 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gH7-1S-VUU">
                                 <rect key="frame" x="213" y="107" width="174" height="102"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="174" id="xhT-ZK-Csa"/>
+                                    <constraint firstAttribute="height" constant="102" id="Asm-On-hXA"/>
+                                    <constraint firstAttribute="width" constant="174" id="DE0-In-tvF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BankGothic-Medium" family="Bank Gothic" pointSize="34"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j53-Wv-y1O">
-                                <rect key="frame" x="86" y="206" width="429" height="24"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="EWa-gn-AhS"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4yW-2W-HJ0">
                                 <rect key="frame" x="345" y="266" width="43" height="30"/>
                                 <state key="normal" title="Pause">
@@ -86,33 +81,37 @@
                                     <action selector="ResumeButtonPressed:" destination="VBR-xU-jNM" eventType="touchUpInside" id="svP-HD-of6"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="klu-Ev-eHr" customClass="WorkPatternView" customModule="Assignments" customModuleProvider="target">
+                                <rect key="frame" x="16" y="209" width="568" height="49"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="j53-Wv-y1O" firstAttribute="leading" secondItem="LI4-UO-rtL" secondAttribute="leadingMargin" constant="70" id="67J-5L-nSc"/>
-                            <constraint firstItem="AeQ-d2-Eb9" firstAttribute="top" secondItem="gH7-1S-VUU" secondAttribute="bottom" constant="57" id="8HP-gJ-eEC"/>
-                            <constraint firstItem="j53-Wv-y1O" firstAttribute="centerX" secondItem="LI4-UO-rtL" secondAttribute="centerX" id="8MX-FO-r9X"/>
-                            <constraint firstItem="S5Z-2E-9c0" firstAttribute="leading" secondItem="kVc-hw-lJI" secondAttribute="leading" id="QXn-MY-Ypd"/>
-                            <constraint firstItem="gH7-1S-VUU" firstAttribute="leading" secondItem="S5Z-2E-9c0" secondAttribute="leading" id="Unu-P7-gfC"/>
-                            <constraint firstItem="kVc-hw-lJI" firstAttribute="baseline" secondItem="S5Z-2E-9c0" secondAttribute="baseline" id="X2h-hM-07R"/>
-                            <constraint firstItem="kVc-hw-lJI" firstAttribute="top" secondItem="j53-Wv-y1O" secondAttribute="bottom" constant="36" id="XX1-Ae-Hd7"/>
-                            <constraint firstItem="j53-Wv-y1O" firstAttribute="top" secondItem="7BB-bM-prp" secondAttribute="bottom" constant="186" id="Xbs-8o-waT"/>
-                            <constraint firstItem="j53-Wv-y1O" firstAttribute="centerX" secondItem="gH7-1S-VUU" secondAttribute="centerX" id="Xl2-zE-uoj"/>
-                            <constraint firstItem="gH7-1S-VUU" firstAttribute="top" secondItem="7BB-bM-prp" secondAttribute="bottom" constant="87" id="ZJX-6b-GFP"/>
-                            <constraint firstItem="AeQ-d2-Eb9" firstAttribute="top" secondItem="4yW-2W-HJ0" secondAttribute="top" id="bxV-AN-8jb"/>
-                            <constraint firstItem="4yW-2W-HJ0" firstAttribute="top" secondItem="kVc-hw-lJI" secondAttribute="top" id="iQg-Pp-iVh"/>
-                            <constraint firstItem="AeQ-d2-Eb9" firstAttribute="leading" secondItem="kVc-hw-lJI" secondAttribute="trailing" constant="92" id="lkc-8Y-hnJ"/>
-                            <constraint firstItem="AeQ-d2-Eb9" firstAttribute="centerX" secondItem="4yW-2W-HJ0" secondAttribute="centerX" id="mlo-Kk-CNg"/>
+                            <constraint firstItem="gH7-1S-VUU" firstAttribute="top" secondItem="7BB-bM-prp" secondAttribute="bottom" constant="87" id="2UB-KS-TZh"/>
+                            <constraint firstItem="klu-Ev-eHr" firstAttribute="centerX" secondItem="gH7-1S-VUU" secondAttribute="centerX" id="2bD-tx-uw5"/>
+                            <constraint firstItem="klu-Ev-eHr" firstAttribute="top" secondItem="gH7-1S-VUU" secondAttribute="bottom" id="AxM-fm-yIM"/>
+                            <constraint firstItem="4yW-2W-HJ0" firstAttribute="baseline" secondItem="AeQ-d2-Eb9" secondAttribute="baseline" id="HHj-1R-iLj"/>
+                            <constraint firstItem="S5Z-2E-9c0" firstAttribute="baseline" secondItem="4yW-2W-HJ0" secondAttribute="baseline" id="QMp-AT-vpu"/>
+                            <constraint firstItem="AeQ-d2-Eb9" firstAttribute="leading" secondItem="kVc-hw-lJI" secondAttribute="trailing" constant="92" id="UtB-Rj-bRE"/>
+                            <constraint firstItem="klu-Ev-eHr" firstAttribute="trailing" secondItem="LI4-UO-rtL" secondAttribute="trailingMargin" id="bHR-XL-Sxd"/>
+                            <constraint firstItem="S5Z-2E-9c0" firstAttribute="baseline" secondItem="kVc-hw-lJI" secondAttribute="baseline" id="eI5-88-GzJ"/>
+                            <constraint firstItem="Suv-Cb-gYo" firstAttribute="top" secondItem="kVc-hw-lJI" secondAttribute="bottom" constant="255" id="fbH-7i-igL"/>
+                            <constraint firstItem="kVc-hw-lJI" firstAttribute="top" secondItem="klu-Ev-eHr" secondAttribute="bottom" constant="8" symbolic="YES" id="ln3-Ou-QpL"/>
+                            <constraint firstItem="gH7-1S-VUU" firstAttribute="leading" secondItem="kVc-hw-lJI" secondAttribute="leading" id="mYU-3q-mEm"/>
+                            <constraint firstItem="klu-Ev-eHr" firstAttribute="leading" secondItem="LI4-UO-rtL" secondAttribute="leadingMargin" id="onX-W2-HYv"/>
+                            <constraint firstItem="kVc-hw-lJI" firstAttribute="leading" secondItem="S5Z-2E-9c0" secondAttribute="leading" id="tgO-qg-gcz"/>
+                            <constraint firstItem="4yW-2W-HJ0" firstAttribute="centerX" secondItem="AeQ-d2-Eb9" secondAttribute="centerX" id="urX-Sx-2Ub"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Work Space" image="Work" id="Y2u-gG-21z"/>
                     <connections>
                         <outlet property="PauseResumeButton" destination="4yW-2W-HJ0" id="SUr-35-wTw"/>
                         <outlet property="ResumeButton" destination="AeQ-d2-Eb9" id="Uwe-Th-kPM"/>
-                        <outlet property="StudyPatternImageView" destination="j53-Wv-y1O" id="XRW-ZQ-bmv"/>
                         <outlet property="TimeLabel" destination="gH7-1S-VUU" id="Q1k-sY-6He"/>
                         <outlet property="startButton" destination="S5Z-2E-9c0" id="f8k-v5-kbi"/>
                         <outlet property="stopButton" destination="kVc-hw-lJI" id="3SD-Jg-KuB"/>
+                        <outlet property="workPatternView" destination="klu-Ev-eHr" id="4dk-bQ-eTE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gtp-NG-GfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1056,7 +1055,7 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="barTintColor" red="0.54625490194392246" green="0.66513789695647485" blue="0.78998234710550885" alpha="0.77000000000000002" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.61176470589999998" green="0.72549019609999998" blue="0.82745098039999998" alpha="0.77000000000000002" colorSpace="deviceRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="E6Y-4W-K7o" kind="relationship" relationship="viewControllers" id="cRz-fP-PtK"/>
@@ -1218,14 +1217,14 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4WD-aH-npA" id="eCD-Ch-M8I">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On to Off ratio" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfV-Hc-fRK">
-                                                    <rect key="frame" x="8" y="14" width="110" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On Percentage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SfV-Hc-fRK">
+                                                    <rect key="frame" x="8" y="14" width="115" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="iqf-GF-gkt">
-                                                    <rect key="frame" x="124" y="7" width="470" height="31"/>
+                                                    <rect key="frame" x="129" y="7" width="465" height="31"/>
                                                 </slider>
                                             </subviews>
                                             <constraints>
@@ -1254,13 +1253,13 @@
                     <tabBarItem key="tabBarItem" title="Settings" image="Settings" id="lYh-Mb-CZ3"/>
                     <navigationItem key="navigationItem" id="ljK-bV-Akz"/>
                     <connections>
-                        <outlet property="OnToOffRatioCell" destination="4WD-aH-npA" id="Abz-cl-bEI"/>
-                        <outlet property="OnToOffRatioSlider" destination="iqf-GF-gkt" id="ccp-fo-w6l"/>
                         <outlet property="ShowCompletedAssignmentsSwitch" destination="SNZ-ov-a7X" id="ASg-aZ-A7a"/>
                         <outlet property="WorkPatternCell" destination="IRp-zV-xDp" id="TaO-qb-jYh"/>
                         <outlet property="WorkPatternPeriodCell" destination="XxS-JG-S8s" id="uPn-Fm-upy"/>
                         <outlet property="WorkPatternPeriodSlider" destination="Wxm-3X-2DS" id="Kh5-0Q-mVX"/>
                         <outlet property="WorkPatternSwitch" destination="zbq-Yy-VZd" id="dcy-Ih-ENu"/>
+                        <outlet property="onPercentageCell" destination="4WD-aH-npA" id="mIJ-hu-iJ5"/>
+                        <outlet property="onPercentageSlider" destination="iqf-GF-gkt" id="VSr-7o-Ivy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gGm-0f-pE6" userLabel="First Responder" sceneMemberID="firstResponder"/>

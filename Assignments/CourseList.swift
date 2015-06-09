@@ -18,6 +18,8 @@ class CourseList{
     var list: [Course] = Array()
     var current: Int = 0
     var showCompleted: Bool = true
+    var workPeriod: Int = 15 * 60
+    var onPercentage: Double = 0.75
     func addCourse(name: String, number: String?){
         list.append(Course(courseName: name, courseNumber: number))
         

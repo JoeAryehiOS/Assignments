@@ -22,6 +22,7 @@
 		DD81BA4F1A9E60F800F04B40 /* AssignmentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD81BA4E1A9E60F800F04B40 /* AssignmentsTests.swift */; };
 		DD826F101B27180D002C8153 /* WorkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD826F0F1B27180D002C8153 /* WorkViewController.swift */; };
 		DD826F141B275B3B002C8153 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD826F131B275B3B002C8153 /* SettingsTableViewController.swift */; };
+		DD826F161B2766DF002C8153 /* WorkPatternView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD826F151B2766DF002C8153 /* WorkPatternView.swift */; };
 		DD86AB391AFE3BBC0039B294 /* AssignmentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD86AB381AFE3BBC0039B294 /* AssignmentTableViewController.swift */; };
 		DDDAB5151AADEE5800467593 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDAB5141AADEE5800467593 /* TableViewController.swift */; };
 		DDDAB5171AB0698000467593 /* AssignmentDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDAB5161AB0698000467593 /* AssignmentDetailViewController.swift */; };
@@ -59,6 +60,7 @@
 		DD81BA4E1A9E60F800F04B40 /* AssignmentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentsTests.swift; sourceTree = "<group>"; };
 		DD826F0F1B27180D002C8153 /* WorkViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkViewController.swift; sourceTree = "<group>"; };
 		DD826F131B275B3B002C8153 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		DD826F151B2766DF002C8153 /* WorkPatternView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkPatternView.swift; sourceTree = "<group>"; };
 		DD86AB381AFE3BBC0039B294 /* AssignmentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentTableViewController.swift; sourceTree = "<group>"; };
 		DDDAB5141AADEE5800467593 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		DDDAB5161AB0698000467593 /* AssignmentDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentDetailViewController.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				DD826F0F1B27180D002C8153 /* WorkViewController.swift */,
 				DD826F131B275B3B002C8153 /* SettingsTableViewController.swift */,
 				DD81BA341A9E60F200F04B40 /* Supporting Files */,
+				DD826F151B2766DF002C8153 /* WorkPatternView.swift */,
 			);
 			path = Assignments;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 				DDDAB5171AB0698000467593 /* AssignmentDetailViewController.swift in Sources */,
 				C879E9001AA77924002B61D1 /* Assignment.swift in Sources */,
 				DD8195511AF2014F00C1732A /* CourseViewController.swift in Sources */,
+				DD826F161B2766DF002C8153 /* WorkPatternView.swift in Sources */,
 				DD81BA3B1A9E60F300F04B40 /* SecondViewController.swift in Sources */,
 				DDDAB5151AADEE5800467593 /* TableViewController.swift in Sources */,
 				C8A7FD471AA8A9EE0046E9AD /* Course.swift in Sources */,

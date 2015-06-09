@@ -22,7 +22,8 @@ class WorkViewController: UIViewController {
     var timer: NSTimer!
     
     @IBOutlet weak var TimeLabel: UILabel!
-    @IBOutlet weak var StudyPatternImageView: UIImageView!
+    @IBOutlet weak var workPatternView: WorkPatternView!
+    
     
     @IBOutlet weak var PauseResumeButton: UIButton!
     @IBOutlet weak var ResumeButton: UIButton!
@@ -35,11 +36,11 @@ class WorkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         CourseList.List.unArchiving()
+        
         time = 0
         stopButton.hidden = true
         ResumeButton.hidden = true
         workTime = 10
-        
         
         
         // Do any additional setup after loading the view.
@@ -66,6 +67,8 @@ class WorkViewController: UIViewController {
                         self.startTimer()
                         self.startButton.hidden = true
                         self.stopButton.hidden = false
+                        self.workPatternView.timeToComplete = Int(self.selectedAssignment.timeToComplete)
+                        self.workPatternView.setNeedsDisplay()
                         })
                 
                 
@@ -119,6 +122,8 @@ class WorkViewController: UIViewController {
     }
     func updateTime(){
         time--
+        workPatternView.currentTime = time
+        workPatternView.setNeedsDisplay()
         TimeLabel.text = formatTime(time)
         if(time.minute == workTime){
             invalidateTimer()

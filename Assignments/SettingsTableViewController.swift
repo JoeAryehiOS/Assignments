@@ -17,12 +17,12 @@ class SettingsTableViewController: UITableViewController {
    
     @IBOutlet weak var WorkPatternPeriodSlider: UISlider!
     
-    @IBOutlet weak var OnToOffRatioSlider: UISlider!
+    @IBOutlet weak var onPercentageSlider: UISlider!
     
     @IBOutlet weak var WorkPatternCell: UITableViewCell!
     
     @IBOutlet weak var WorkPatternPeriodCell: UITableViewCell!
-    @IBOutlet weak var OnToOffRatioCell: UITableViewCell!
+    @IBOutlet weak var onPercentageCell: UITableViewCell!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,7 +39,7 @@ class SettingsTableViewController: UITableViewController {
     }
     @IBAction func WorkPatternSwitchChanged(sender: AnyObject) {
         WorkPatternPeriodCell.hidden = !WorkPatternSwitch.on
-        OnToOffRatioCell.hidden = !WorkPatternSwitch.on
+        onPercentageCell.hidden = !WorkPatternSwitch.on
     }
 
     // MARK: - Table view data source
