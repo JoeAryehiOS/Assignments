@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AssignmentDetailViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AssignmentDetailViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     var ac: assignmentCourse?
         override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,9 +37,13 @@ class AssignmentDetailViewController: UIViewController, UIPickerViewDelegate, UI
         let assignment = Assignment(assignmentName: NameField.text, dueDate: DatePicker.date, timeToComplete: time , Details: DetailField.text)
         //need to add timeToComplete
       CourseList.List.list[courseIndex!].Assignments.append(assignment)
-        //self.presentingViewController?.reloadInputViews()
-        dismissViewControllerAnimated(true, completion: nil)
+        self.navigationController?.popToRootViewControllerAnimated(true)
+        
            }
+    
+    @IBAction func Cancel(sender: AnyObject) {
+       self.navigationController?.popToRootViewControllerAnimated(true)
+    }
     @IBAction func CourseSelection(sender: AnyObject) {
         let alert = UIAlertController(title: nil, message: "Choose Course", preferredStyle: UIAlertControllerStyle.ActionSheet)
         for i in enumerate(CourseList.List.list){

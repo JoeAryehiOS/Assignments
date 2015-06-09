@@ -184,9 +184,7 @@ class TableViewController: UITableViewController {
             
         }
     }
-    override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String! {
-        return "Banana"
-    }
+    
    
     
     func editCourse(CourseIndex: Int){
