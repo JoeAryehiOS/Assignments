@@ -27,6 +27,10 @@ class SettingsTableViewController: UITableViewController {
     @IBOutlet weak var onPercentageLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        WorkPatternPeriodLabel.text = "\(CourseList.List.workPeriod / 60)"
+        WorkPatternPeriodSlider.value = Float(CourseList.List.workPeriod / 60)
+        onPercentageLabel.text = "\(CourseList.List.onPercentage)%"
+        onPercentageSlider.value = Float(CourseList.List.onPercentage)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -43,14 +47,17 @@ class SettingsTableViewController: UITableViewController {
         WorkPatternPeriodCell.hidden = !WorkPatternSwitch.on
         onPercentageCell.hidden = !WorkPatternSwitch.on
         CourseList.List.useWorkPeriod = WorkPatternSwitch.on
+        CourseList.List.save()
     }
     @IBAction func ShowCompletedSwitchChanged(sender: AnyObject) {
         CourseList.List.showCompleted = ShowCompletedAssignmentsSwitch.on
+        CourseList.List.save()
     }
 
     @IBAction func WorkPatternPeriodSliderChanged(sender: AnyObject) {
         WorkPatternPeriodLabel.text = "\(Int(WorkPatternPeriodSlider.value))"
         CourseList.List.workPeriod = Int(WorkPatternPeriodSlider.value) * 60
+        CourseList.List.save()
     }
     
     @IBAction func onPercentageSliderChanged(sender: AnyObject) {
@@ -60,6 +67,7 @@ class SettingsTableViewController: UITableViewController {
         
         CourseList.List.onPercentage = Double(rounded)
         onPercentageLabel.text = "\(rounded)%"
+        CourseList.List.save()
     }
     // MARK: - Table view data source
 

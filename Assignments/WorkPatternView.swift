@@ -25,9 +25,7 @@ class WorkPatternView: UIView {
 //        
 //        CGContextFillRect(context, rect)
         let numberOfSections: CGFloat = CGFloat(timeToComplete / CourseList.List.workPeriod)
-        println(numberOfSections)
-        println("ttc:\(timeToComplete)")
-        println("wp\(CourseList.List.workPeriod)")
+       
         let sectionWidth: CGFloat = CGFloat(frame.width / numberOfSections)
         for var i: CGFloat = 0.0; i <= numberOfSections ; ++i{
             let partialWidth = (sectionWidth * CGFloat(CourseList.List.onPercentage))

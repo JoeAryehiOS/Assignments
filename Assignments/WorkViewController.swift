@@ -119,36 +119,59 @@ class WorkViewController: UIViewController {
         if(timer != nil){
             timer.invalidate()
         }
+        CourseList.List.save()
     }
     func updateTime(){
-        time--
+        
         workPatternView.currentTime = time
         workPatternView.setNeedsDisplay()
         TimeLabel.text = formatTime(time)
+        if(time == 0){
+            let doneController: UIAlertController = UIAlertController(title: "Have you completed this Assignment?", message: "Select the appropriate option", preferredStyle: .ActionSheet)
+            invalidateTimer()
+            //Create and add the Cancel action
+            let cancelAction: UIAlertAction = UIAlertAction(title: "Yes", style: .Cancel) { action -> Void in
+                self.selectedAssignment.isCompleted = true
+                //Just dismiss the action sheet
+            }
+            doneController.addAction(cancelAction)
+            //Create and add first option actionself.selectedAssignment.increaseTime(self.workTime/60)
+            let noAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Default){
+                action in
+                self.selectedAssignment.increaseTime(Double(self.workTime))
+                self.time = Int(self.selectedAssignment.timeToComplete)
+            }
+            
+            doneController.addAction(noAction)
+        }
         if(time % workTime == 0){
+            
             //invalidateTimer()
-            selectedAssignment.timeSpent = Double(Int(selectedAssignment.timeSpent) + workTime)
-            if(selectedAssignment.checkCompletion()){
-                let doneController: UIAlertController = UIAlertController(title: "Are You finished?", message: "Select the appropriate option", preferredStyle: .ActionSheet)
+            
+            
+            if(time == 1){
+                let doneController: UIAlertController = UIAlertController(title: "Have you completed this Assignment?", message: "Select the appropriate option", preferredStyle: .ActionSheet)
                 invalidateTimer()
                 //Create and add the Cancel action
                 let cancelAction: UIAlertAction = UIAlertAction(title: "Yes", style: .Cancel) { action -> Void in
+                    self.selectedAssignment.isCompleted = true
                     //Just dismiss the action sheet
                 }
                 doneController.addAction(cancelAction)
                 //Create and add first option actionself.selectedAssignment.increaseTime(self.workTime/60)
-                let takePictureAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Default){
+                let noAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Default){
                     action in
                     self.selectedAssignment.increaseTime(Double(self.workTime))
+                    self.time = Int(self.selectedAssignment.timeToComplete)
                 }
                 
-                doneController.addAction(takePictureAction)
-            }
+                doneController.addAction(noAction)
+            }else{
             var alert = UIAlertView()
             alert.title = "Break's over"
             alert.message = "Time to work"
             alert.addButtonWithTitle("ok")
-            alert.show()
+                alert.show()}
             
         }
         let remainder = time % workTime
@@ -182,7 +205,7 @@ class WorkViewController: UIViewController {
             
 
         }
-        
+        time--
         
     }
     
