@@ -58,7 +58,7 @@ class SettingsTableViewController: UITableViewController {
         WorkPatternPeriodLabel.text = "\(Int(WorkPatternPeriodSlider.value))"
         
         CourseList.List.workPeriod = Int(WorkPatternPeriodSlider.value) * 60
-        println(Int(WorkPatternPeriodSlider.value) * 60)
+        //println(Int(WorkPatternPeriodSlider.value) * 60)
         CourseList.List.save()
     }
     
@@ -68,7 +68,7 @@ class SettingsTableViewController: UITableViewController {
         let rounded = round(value * 100)/100
         
         CourseList.List.onPercentage = Double(rounded)
-        onPercentageLabel.text = "\(rounded)%"
+        onPercentageLabel.text = "\(rounded * 100)%"
         CourseList.List.save()
     }
     // MARK: - Table view data source

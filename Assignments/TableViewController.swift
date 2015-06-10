@@ -133,7 +133,11 @@ class TableViewController: UITableViewController {
         dateFormatter.timeZone = NSTimeZone.localTimeZone()
 
         cell.detailTextLabel?.text = "\(dateFormatter.stringFromDate(date))   \(detail)"
-        
+            if(CourseList.List.list[indexPath.section].Assignments[indexPath.row].isCompleted){
+                //let colorComponents: [CGFloat] = [0.0, 1.0, 0.0, 1.0]
+                cell.backgroundColor = UIColor(red: 0.0, green: 0.8, blue: 0.3, alpha: 1.0)
+                
+            }
         return cell
         }else{
             let cell = tableView.dequeueReusableCellWithIdentifier("Reuse Identifier", forIndexPath: indexPath) as! UITableViewCell
@@ -184,7 +188,9 @@ class TableViewController: UITableViewController {
             
         }
     }
-    
+    override func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String! {
+        return "Banana"
+    }
    
     
     func editCourse(CourseIndex: Int){

@@ -129,7 +129,7 @@ class WorkViewController: UIViewController {
         self.selectedAssignment.timeSpent = (self.selectedAssignment.timeToComplete - Double(time))
        
         if(time == 0){
-            print("time == 0")
+            //print("time == 0")
             let doneController: UIAlertController = UIAlertController(title: "Have you completed this Assignment?", message: "Select the appropriate option", preferredStyle: .ActionSheet)
             invalidateTimer()
             //Create and add the Cancel action
@@ -148,7 +148,8 @@ class WorkViewController: UIViewController {
             doneController.addAction(noAction)
             presentViewController(doneController, animated: true, completion: nil)
         }else{
-                println("remaingder:\(time % workTime), workTime: \(workTime), time: \(time)")
+            if(Double(time) != selectedAssignment.timeToComplete){
+                //println("remaingder:\(time % workTime), workTime: \(workTime), time: \(time)")
             
         if(time % workTime == 0){
             
@@ -193,7 +194,7 @@ class WorkViewController: UIViewController {
             alert.show()
             
 
-        }
+                }}
         time--
         
         }}

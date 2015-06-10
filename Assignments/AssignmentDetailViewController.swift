@@ -45,6 +45,7 @@ class AssignmentDetailViewController: UITableViewController, UIPickerViewDelegat
        self.navigationController?.popToRootViewControllerAnimated(true)
     }
     @IBAction func CourseSelection(sender: AnyObject) {
+        CourseField.resignFirstResponder()
         let alert = UIAlertController(title: nil, message: "Choose Course", preferredStyle: UIAlertControllerStyle.ActionSheet)
         for i in enumerate(CourseList.List.list){
             alert.addAction(UIAlertAction(title: i.element.courseName, style: UIAlertActionStyle.Default){
