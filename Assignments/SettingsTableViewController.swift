@@ -56,7 +56,9 @@ class SettingsTableViewController: UITableViewController {
 
     @IBAction func WorkPatternPeriodSliderChanged(sender: AnyObject) {
         WorkPatternPeriodLabel.text = "\(Int(WorkPatternPeriodSlider.value))"
+        
         CourseList.List.workPeriod = Int(WorkPatternPeriodSlider.value) * 60
+        println(Int(WorkPatternPeriodSlider.value) * 60)
         CourseList.List.save()
     }
     

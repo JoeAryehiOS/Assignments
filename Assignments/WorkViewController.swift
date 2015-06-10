@@ -126,7 +126,10 @@ class WorkViewController: UIViewController {
         workPatternView.currentTime = time
         workPatternView.setNeedsDisplay()
         TimeLabel.text = formatTime(time)
+        self.selectedAssignment.timeSpent = (self.selectedAssignment.timeToComplete - Double(time))
+       
         if(time == 0){
+            print("time == 0")
             let doneController: UIAlertController = UIAlertController(title: "Have you completed this Assignment?", message: "Select the appropriate option", preferredStyle: .ActionSheet)
             invalidateTimer()
             //Create and add the Cancel action
@@ -143,39 +146,25 @@ class WorkViewController: UIViewController {
             }
             
             doneController.addAction(noAction)
-        }
+            presentViewController(doneController, animated: true, completion: nil)
+        }else{
+                println("remaingder:\(time % workTime), workTime: \(workTime), time: \(time)")
+            
         if(time % workTime == 0){
             
             //invalidateTimer()
             
             
-            if(time == 1){
-                let doneController: UIAlertController = UIAlertController(title: "Have you completed this Assignment?", message: "Select the appropriate option", preferredStyle: .ActionSheet)
-                invalidateTimer()
-                //Create and add the Cancel action
-                let cancelAction: UIAlertAction = UIAlertAction(title: "Yes", style: .Cancel) { action -> Void in
-                    self.selectedAssignment.isCompleted = true
-                    //Just dismiss the action sheet
-                }
-                doneController.addAction(cancelAction)
-                //Create and add first option actionself.selectedAssignment.increaseTime(self.workTime/60)
-                let noAction = UIAlertAction(title: "No", style: UIAlertActionStyle.Default){
-                    action in
-                    self.selectedAssignment.increaseTime(Double(self.workTime))
-                    self.time = Int(self.selectedAssignment.timeToComplete)
-                }
-                
-                doneController.addAction(noAction)
-            }else{
+            
             var alert = UIAlertView()
             alert.title = "Break's over"
             alert.message = "Time to work"
             alert.addButtonWithTitle("ok")
-                alert.show()}
+            alert.show()
             
         }
         let remainder = time % workTime
-        let breakRemainder = Int(Double(workTime) * CourseList.List.onPercentage)
+        let breakRemainder = workTime - Int(Double(workTime) * CourseList.List.onPercentage)
         if(remainder == breakRemainder){
             
             selectedAssignment.timeSpent = Double(Int(selectedAssignment.timeSpent) + workTime)
@@ -207,7 +196,7 @@ class WorkViewController: UIViewController {
         }
         time--
         
-    }
+        }}
     
     
     /*
